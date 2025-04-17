@@ -1,0 +1,95 @@
+
+  body {
+    
+    font-family: "Poppins", sans-serif !important;
+    background-color: #f8f9fa !important; /* Warna latar belakang */
+}
+
+
+  .custom-rounded {
+    border-radius: 15px;
+  }
+
+  .bg-custom {
+    background-color: #00583a;
+  }
+
+  .btn-warning {
+    color: #00583a;
+    background-color: #ffc107;
+    border: none;
+    transition: all 3.0s ease-in-out; /* Animasi halus */
+  }
+
+  
+  /* Hover Effect */
+  .btn-warning:hover {
+    background-color: #e0a800;
+    transform: scale(1.05); 
+  }
+
+  /* Fokus */
+  .btn-warning:focus {
+    outline: none; /* Menghapus outline default */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Efek shadow */
+  }
+  
+
+  
+  
+  /* gpt */
+  /* Tombol Kustom */
+.btn-warning {
+  color: #00583a;
+  background-color: #ffc107;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+  color: white;
+}
+
+.btn-warning:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Pastikan hanya elemen tanpa AOS yang menggunakan animasi ini */
+section:not([data-aos]) {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInSection 1s ease-out forwards;
+}
+
+@keyframes fadeInSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navbar tetap fixed */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+}
+/* Paksa semua link di navbar jadi putih */
+nav.navbar .nav-link {
+  color: white !important;
+}
+
+/* Hover tetap hijau */
+nav.navbar .nav-link:hover {
+  color: green !important;
+}
+
+/* Kalau aktif dan Bootstrap kasih warna kuning, kita timpa juga */
+nav.navbar .nav-link.active {
+  color: white !important;
+}
+

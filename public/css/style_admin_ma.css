@@ -1,0 +1,495 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #DBFCF1;
+    font-family: "Poppins", sans-serif;
+    /* -ms-overflow-style: none; */
+}
+/* MA ADMIN */
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Navbar Style */
+.navbar {
+    background-color: #0B4B25; 
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #FFD700 !important; 
+}
+
+.nav-item .active {
+    color: #FFD700 !important; 
+}
+
+.btn-ppdb {
+    background-color: #FFD700; 
+    font-weight: bold;
+    color: black !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.btn-ppdb:hover {
+    background-color: #E6C200;
+}
+
+.out-btn {
+    transform: rotate(180deg);
+    transition: transform 0.2s;
+}
+
+/* Tombol Kembali */
+.btn-back {
+    color: #FFD700;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.btn-back i {
+    transition: transform 0.2s;
+}
+
+
+/* Carousel Style */
+.carousel .btn-edit {
+    background-color: #FFD700;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 45%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 50; 
+    text-decoration: none;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-edit:hover {
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    opacity: 0.8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.carousel-address {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+
+}
+
+.carousel-caption p {
+    font-size: 1rem;
+    margin-top: 5px;
+}
+.carousel-inner img {
+    width: 100%;
+    height: 650px; 
+    object-fit: cover; 
+}
+
+/* Text berjalan */
+.text-berjalan {
+    background-color: #0f4d27;
+}
+.text-berjalan .text {
+    color: white;
+}
+
+/* Sambutan Kepala Sekolah */
+.sambutan-container {
+    width: 100%;
+    height: 70vh;
+    text-align: center;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.sambutan-container button {
+    margin: 150px;
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: #FFD700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.sambutan-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Tentang Kami */
+.full-width-card {
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+    margin: 0; 
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.card-content {
+    max-width: 90%;
+    margin: auto;
+    padding: 3rem;
+    text-align: center;
+}
+.card-content img{
+    max-width: 400px;
+}
+
+
+/* Guru Section */
+.guru-container {
+    width: 100%;
+    height: 70vh;
+    text-align: center;
+    padding: 50px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.guru-container button {
+    margin: 150px;
+    display: inline-block;
+    padding: 15px 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background-color: #FFD700 ;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.guru-container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+/* KEGIATAN */
+.kegiatan-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.kegiatan-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #0B4B25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    color: gray;
+    background-color: white;
+    
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.kegiatan i {
+    transition: transform 0.3s ease-in-out;
+}
+.kegiatan i:hover {
+    transform: scale(1.05);
+}
+.edit-btn {
+    background-color: #FFD700;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+.edit-btn:hover {
+    transform: scale(1.05);
+}
+.create-btn {
+    background-color: #FFD700;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+}
+.create-btn:hover {
+    transform: scale(1.05);
+}
+
+
+/* BERITA */
+.berita {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+.berita-card {
+    display: flex;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    height: 180px;
+    position: relative;
+}
+.berita-card img {
+    width: 70%;
+    object-fit: cover;
+}
+.berita-content {
+    width: 30%;
+    padding: 8px;
+    background: white;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.berita-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70%;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 4px;
+    font-size: 10px;
+}
+
+.button-berita {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #1E6F42;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.button-berita:hover {
+    background-color: #14532d;
+}
+
+/* SOSIAL MEDIA */
+.sosmed-container {
+    padding: 20px;
+}
+.sosmed-container h2 {
+    color: #000;
+}
+.sosmed-container h3 {
+    color: #006400;
+    font-weight: bold;
+}
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+.social-media a {
+    display: inline-block;
+    background: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.social-media img {
+    width: 40px;
+    height: 40px;
+}
+.link-admin-sosmed {
+    text-decoration: none;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #fff;
+    padding: 10px 0;
+    position: relative;
+}
+.footer p {
+    color: #006400;
+    font-size: 12px;
+    /* font-weight: bold; */
+}
+
+
+/* RESPONSIF */
+@media (max-width: 768px) {
+    /* navbar */
+    .navbar-brand img {
+        height: 50px;
+    }
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .carousel {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    .carousel-title {
+        font-size: 2rem;
+        margin-bottom: 25%;
+    }
+    .carousel-address {
+        padding-bottom: 20px;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    /* Sambutan */
+    .sambutan-container {
+        height: auto;
+        padding: 30px;
+    }
+    .sambutan-container button {
+        margin: 50px 0;
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+
+    /* Guru */
+    .guru-container {
+        height: auto;
+        padding: 30px;
+    }
+    .guru-container button {
+        margin: 50px 0;
+        padding: 10px 30px;
+        font-size: 16px;
+    }
+    /* Tentang Kami */
+    .tentang-kami img {
+        width: 90%;
+    }
+    .tentang-kami .card-content {
+        margin: auto;
+        padding: 1.5rem;
+    }
+    .tentang-kami p {
+        text-align: justify;
+    }
+    /* Kegiatan */
+    .circle {
+        width: 150px;
+        height: 150px;
+        font-size: 40px;
+    }
+
+    /* Berita */
+    /* .berita-card {
+        flex-direction: column;
+        height: auto;
+    }
+    .berita-card img {
+        width: 100%;
+        height: 200px;
+    }
+    .berita-content {
+        width: 100%;
+        font-size: 12px;
+        padding: 15px;
+    } */
+
+    /* Sosmed */
+    .social-media {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .social-media a {
+        padding: 8px;
+    }
+    .social-media img {
+        width: 30px;
+        height: 30px;
+    }
+    /* Footer */
+    .footer p {
+        font-size: 10px;
+        text-align: center;
+    }
+}
