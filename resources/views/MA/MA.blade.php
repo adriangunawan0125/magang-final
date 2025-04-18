@@ -49,17 +49,13 @@
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ $key }}" class="{{ $key == 0 ? 'active' : '' }}" aria-current="true"></button>
             @endforeach
         </div>
-        <div class="carousel-inner">
-            @foreach ($carousels_ma as $key => $carousel)
-                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                    <img src="{{ asset('uploads/carousel/'.$carousel->image) }}" class="d-block w-100" alt="{{ $carousel->title }}">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>{{ $carousel->title }}</h5>
-                        <p>{{ $carousel->description }}</p>
-                    </div>
-                </div>
-            @endforeach
+       <div class="carousel-inner">
+    @foreach ($carousels as $key => $carousel)
+        <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
+            <img src="{{ asset('uploads/carousel/'.$carousel->image) }}" class="d-block w-100" alt="{{ $carousel->title }}">
         </div>
+    @endforeach
+</div>
         <div class="carousel-caption position-absolute bottom-0 start-50 translate-middle-x text-center">
             <p class="carousel-address text-light">
                 Jl. Manggar, RT/RW 001/002, Desa Manggar, Kec. Godong, Kab. Grobogan, Prov. Jawa Tengah
