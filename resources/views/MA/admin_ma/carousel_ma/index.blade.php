@@ -176,7 +176,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($carousels as $index => $carousel)
+                    @foreach ($carousels_ma as $index => $carousel)
                     <tr>
                         <td>{{ $index + 1 }}</td>
                         <td>
@@ -210,7 +210,7 @@
             <a href="{{ route('admin.carousel_ma.create') }}" class="btn btn-add">
                 <i class="fas fa-plus"></i> Tambah Gambar
             </a>
-            <a href="/admin" class="btn btn-back">
+            <a href="/admin/admin_ma" class="btn btn-back">
                 <i class="fas fa-arrow-left"></i> Kembali
             </a>
         </div>
