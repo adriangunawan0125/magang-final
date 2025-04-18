@@ -58,16 +58,12 @@ Route::get('/berita/home', function () {
     return view('berita.home', compact('berita'));
 })->name('berita.home');
 
-<<<<<<< HEAD
-
 Route::get('berita/{id}', [BeritaController::class, 'show'])->name('berita.show');;
 
 Route::get('/Ma', function () {
     return view('MA.MA');
 });
 
-=======
->>>>>>> d5edc109fd6c9b56241f842177d397a2a7cac4f5
 Route::get('/ma', [MAController::class, 'index'])->name('ma.index');
 Route::get('/mts', [MTSController::class, 'index'])->name('mts.index');
 
