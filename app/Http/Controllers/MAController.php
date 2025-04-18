@@ -8,26 +8,19 @@ use App\Models\Sosmed_ma;
 use App\Models\Kegiatan_ma;
 use App\Models\Carousel_ma;
 use App\Models\Sambutan_ma;
-use App\Models\Berita;
+use App\Models\Berita; 
 
 class MAController extends Controller
 {
     public function index()
     {
         $sambutan = Sambutan_ma::first();
-        $carousels_ma = Carousel_ma::all();
+        $carousels = Carousel_ma::all(); // pastikan konsisten pakai $carousels
         $guru = Guru::all(); 
         $sosmed = Sosmed_ma::all();
         $kegiatans = Kegiatan_ma::all();
-        $berita = Berita::latest()->get();
-    
-        return view('MA.MA', compact(
-            'guru', 
-            'sosmed', 
-            'kegiatans', 
-            'carousels_ma', 
-            'sambutan',
-            'berita'
-        ));
+        $berita = Berita::latest()->get(); // berita ditambahkan
+
+        return view('MA.MA', compact('guru', 'sosmed', 'kegiatans', 'carousels', 'sambutan', 'berita'));
     }
 }
