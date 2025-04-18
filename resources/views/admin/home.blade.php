@@ -111,8 +111,10 @@
 
   <!-- Welcome Section -->
   <div class="welcome">
-    <h2 class="text-center">SELAMAT DATANG DI WEBSITE YAYASAN NURUL FIRDAUS</h2>
-  </div>
+        <h2> <marquee behavior="scroll" direction="left" class="text">
+            SELAMAT DATANG DI WEBSITE YAYASAN NURUL FIRDAUS
+        </marquee></h2>
+    </div>
 
   <!-- Container Utama -->
   <div class="content-container">
