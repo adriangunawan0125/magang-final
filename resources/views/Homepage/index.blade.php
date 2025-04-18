@@ -135,28 +135,26 @@
 </section>
 
   
+<style>
+  .circle {
+    width: 350px;  /* Ukuran lingkaran */
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+  }
 
-  <style>
-    .circle {
-      width: 350px;  /* Sesuaikan ukuran */
-      height: 350px;
-      border-radius: 30px 70px 30px 70px;
-      overflow: hidden;
-      margin: auto;
-    }
+  .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    .circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-
-    .row > .col-md-4 {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-  </style>
+  .row > .col-md-4 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+</style>
 
  <!-- Footer Section -->
  <footer class="container-fluid py-3 px-4 px-md-5">
