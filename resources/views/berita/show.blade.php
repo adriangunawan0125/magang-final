@@ -137,7 +137,7 @@
               <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Profile</a></li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Program Pilihan</a></li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Informasi</a></li>
-              <li><a href="{{ route('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a></li>
+              <li><a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a></li>
           </ul>
           
         </div>
