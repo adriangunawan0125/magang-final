@@ -22,9 +22,9 @@ class CarouselMTSController extends Controller
     {
         $request->validate([
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // 2048 KB = 2MB
-            ], [
-                'image.max' => 'Ukuran gambar tidak boleh lebih dari 2MB!',
-            ]);
+        ], [
+            'image.max' => 'Ukuran gambar tidak boleh lebih dari 2MB!',
+        ]);
 
         $imageName = time() . '.' . $request->image->extension();
         $request->image->move(public_path('uploads/carousel'), $imageName);

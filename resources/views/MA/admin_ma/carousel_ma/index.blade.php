@@ -181,7 +181,7 @@
                         <td>{{ $index + 1 }}</td>
                         <td>
                             @if($carousel->image)
-                                <img src="{{ asset('uploads/carousel/'.$carousel->image) }}">
+                                <img src="{{ asset('uploads/carousel/'.$carousel->image) }}" alt="Gambar Carousel">
                             @else
                                 <i class="fas fa-user-circle" style="font-size: 30px; color: gray;"></i>
                             @endif

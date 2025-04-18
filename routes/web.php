@@ -58,6 +58,7 @@ Route::get('/berita/home', function () {
     return view('berita.home', compact('berita'));
 })->name('berita.home');
 
+<<<<<<< HEAD
 
 Route::get('berita/{id}', [BeritaController::class, 'show'])->name('berita.show');;
 
@@ -65,6 +66,8 @@ Route::get('/Ma', function () {
     return view('MA.MA');
 });
 
+=======
+>>>>>>> d5edc109fd6c9b56241f842177d397a2a7cac4f5
 Route::get('/ma', [MAController::class, 'index'])->name('ma.index');
 Route::get('/mts', [MTSController::class, 'index'])->name('mts.index');
 
@@ -168,15 +171,16 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
             Route::get('/sosmed/edit', [SosmedMAController::class, 'edit'])->name('sosmed.edit');
             Route::post('/sosmed/update', [SosmedMAController::class, 'update'])->name('sosmed.update');
             Route::get('/admin', [SosmedMAController::class, 'index'])->name('MA.admin_ma.admin');
-
+            
+            // NTAR DIRRUBAH
             Route::get('/carousel_ma', [CarouselMAController::class, 'index'])->name('carousel_ma.index');
-            Route::get('/carousel_ma/data', [CarouselMAController::class, 'showCarousel'])->name('carousel_ma.data');
+            Route::get('/carousel/data', [CarouselMAController::class, 'showCarousel'])->name('carousel_ma.data');
             Route::get('/carousel_ma/create', [CarouselMAController::class, 'create'])->name('carousel_ma.create');
             Route::post('/carousel_ma/store', [CarouselMAController::class, 'store'])->name('carousel_ma.store'); 
             Route::get('/carousel_ma/{id}/edit', [CarouselMAController::class, 'edit'])->name('carousel_ma.edit');
             Route::put('/carousel_ma/{id}', [CarouselMAController::class, 'update'])->name('carousel_ma.update');
-            Route::delete('/carousel_ma{id}', [CarouselMAController::class, 'destroy'])->name('carousel_ma.destroy');
-
+            Route::delete('/carousel_ma/{id}', [CarouselMAController::class, 'destroy'])->name('carousel_ma.destroy');
+                        
     // CRUD Berita
     Route::resource('/berita', BeritaController::class)
         ->parameters(['berita' => 'berita']);

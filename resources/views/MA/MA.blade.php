@@ -50,7 +50,7 @@
             @endforeach
         </div>
         <div class="carousel-inner">
-            @foreach ($carousels as $key => $carousel)
+            @foreach ($carousels_ma as $key => $carousel)
                 <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
                     <img src="{{ asset('uploads/carousel/'.$carousel->image) }}" class="d-block w-100" alt="{{ $carousel->title }}">
                     <div class="carousel-caption d-none d-md-block">

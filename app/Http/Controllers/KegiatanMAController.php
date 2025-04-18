@@ -36,7 +36,7 @@ class KegiatanMAController extends Controller
             'foto' => $fotoPath,
         ]);
 
-        return redirect()->route('kegiatan_ma.index')->with('success', 'Kegiatan berhasil ditambahkan.');
+        return redirect()->route('admin.kegiatan_ma.index')->with('success', 'Kegiatan berhasil ditambahkan.');
     }
 
  
@@ -73,7 +73,7 @@ class KegiatanMAController extends Controller
         
         $kegiatan_ma->update($data);
 
-        return redirect()->route('kegiatan_ma.index')->with('success', 'Kegiatan berhasil diperbarui.');
+        return redirect()->route('admin.kegiatan_ma.index')->with('success', 'Kegiatan berhasil diperbarui.');
     }
 
    
@@ -84,6 +84,6 @@ class KegiatanMAController extends Controller
         }
         $kegiatan_ma->delete();
 
-        return redirect()->route('kegiatan_ma.index')->with('success', 'Kegiatan berhasil dihapus.');
+        return redirect()->route('admin.kegiatan_ma.index')->with('success', 'Kegiatan berhasil dihapus.');
     }
 }
