@@ -1,41 +1,132 @@
 @extends('layouts.auth')
 
 @section('content')
-    <style>
+<style>
+    /* Base styles */
+    .kembali-btn {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .kembali-icon {
+        color: #F4DC00;
+        transition: color 0.3s;
+    }
+
+    .kembali-btn:hover {
+        background-color: #F4DC00;
+        color: #00583A;
+        border-color: #F4DC00;
+    }
+
+    .kembali-btn:hover .kembali-icon {
+        color: #00583A;
+    }
+
+    .img-small {
+        max-width: 150px !important;
+    }
+
+    .toggle-password {
+        cursor: pointer;
+        color: #6c757d;
+        font-size: 18px;
+        transition: color 0.3s;
+    }
+
+    .toggle-password:hover {
+        color: #00583A;
+    }
+
+    /* Card styling */
+    .card {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        /* iPad and smaller tablets */
+        .container {
+            padding: 20px;
+        }
+        
+        .card {
+            width: 100%;
+            max-width: 350px;
+            padding: 20px;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        /* Mobile devices */
+        .container {
+            padding: 15px;
+        }
+        
+        .card {
+            margin: 10px;
+            padding: 15px;
+            box-shadow: none;
+            border: 1px solid #ddd;
+        }
+        
+        .navbar {
+            padding: 10px 15px;
+        }
+        
+        .navbar-brand img {
+            width: 30px;
+            height: 30px;
+        }
+        
         .kembali-btn {
-            transition: background-color 0.3s, color 0.3s;
+            padding: 5px 10px;
+            font-size: 0.9rem;
         }
+        
+        h3 {
+            font-size: 1.3rem;
+        }
+        
+        .form-label {
+            font-size: 0.9rem;
+        }
+        
+        .form-control {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .text-center img {
+            width: 60px;
+            height: 60px;
+        }
+    }
 
-        .kembali-icon {
-            color: #F4DC00;
-            transition: color 0.3s;
+    @media (max-width: 375px) {
+        .card {
+            padding: 12px;
         }
-
-        .kembali-btn:hover {
-            background-color: #F4DC00;
-            color: #00583A;
-            border-color: #F4DC00;
+        
+        h3 {
+            font-size: 1.2rem;
         }
-
-        .kembali-btn:hover .kembali-icon {
-            color: #00583A;
+        
+        .form-control {
+            font-size: 0.85rem;
         }
-
-        .img-small {
-            max-width: 150px !important;
-        }
-
-        .toggle-password {
-            cursor: pointer;
-            color: #6c757d;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-
-        .toggle-password:hover {
-            color: #00583A;
-        }
-    </style>
+    }
+</style>
 
     <nav class="navbar navbar-light shadow-sm p-3" style="background-color: #00583A;">
         <div class="container-fluid">
