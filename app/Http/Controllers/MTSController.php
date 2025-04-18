@@ -8,6 +8,7 @@ use App\Models\Sosmed_mts;
 use App\Models\Kegiatan_mts;
 use App\Models\Carousel_mts;
 use App\Models\sambutan_mts;
+use App\Models\Berita;
 
 class MTSController extends Controller
 {
@@ -18,7 +19,7 @@ class MTSController extends Controller
         $guru = Guru_mts::all(); 
         $sosmed = Sosmed_mts::all();
         $kegiatans = Kegiatan_mts::all();
-
-        return view('MTs.MTs', compact('guru', 'sosmed', 'kegiatans', 'carousels_mts', 'sambutan'));
+        $berita = Berita::latest()->get();
+        return view('MTs.MTs', compact('guru', 'sosmed', 'kegiatans', 'carousels_mts', 'sambutan','berita'));
     }
 }

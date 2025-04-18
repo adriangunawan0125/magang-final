@@ -58,6 +58,9 @@ Route::get('/berita/home', function () {
     return view('berita.home', compact('berita'));
 })->name('berita.home');
 
+
+Route::get('berita/{id}', [BeritaController::class, 'show'])->name('berita.show');;
+
 Route::get('/Ma', function () {
     return view('MA.MA');
 });
@@ -178,8 +181,6 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::resource('/berita', BeritaController::class)
         ->parameters(['berita' => 'berita']);
 
-    Route::get('/admin/berita/{id}', [BeritaController::class, 'show'])->name('admin.berita.show');;
-
     Route::get('/admin/home', [BeritaController::class, 'beritaAdmin'])->name('admin.home');
 
     Route::prefix('admin')->group(function () {
@@ -204,25 +205,6 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
 
 
 Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel'); //route export excel PPDB 
-
-// route nia 
-
-
-// ROUTE MTS
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -137,7 +137,7 @@
               <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Profile</a></li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Program Pilihan</a></li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Informasi</a></li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">PPDB</a></li>
+              <li><a href="{{ route('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a></li>
           </ul>
           
         </div>
@@ -145,8 +145,8 @@
         <div class="col-md-2 d-flex flex-column h-100">
             <h5 class="fw-bold mb-3">Website Terkait</h5>
             <ul class="list-unstyled">
-                <li><a href="{{ url('ma-section') }}" class="text-primary text-decoration-underline">MA</a></li>
-                <li><a href="{{ url('mts-section') }}" class="text-primary text-decoration-underline">MTS</a></li>
+                <li><a href="{{ url('/ma') }}" class="text-primary text-decoration-underline">MA</a></li>
+                <li><a href="{{ url('/mts') }}" class="text-primary text-decoration-underline">MTS</a></li>
             </ul>
         </div>
 

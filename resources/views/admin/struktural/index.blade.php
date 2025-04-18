@@ -115,9 +115,9 @@
                             aria-expanded="false"><b>PROGRAM PILIHAN</b></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item {{ request()->is('ma-section') ? 'active' : '' }}"
-                                    href="{{ url('ma-section') }}">MA</a></li>
-                            <li><a class="dropdown-item {{ request()->is('mts-section') ? 'active' : '' }}"
-                                    href="{{ url('mts-section') }}">MTS</a></li>
+                                    href="{{ url('/admin/admin_ma') }}">MA</a></li>
+                            <li><a class="dropdown-item {{ request()->is('/mts-section') ? 'active' : '' }}"
+                                    href="{{ url('admin/admin_mts') }}">MTS</a></li>
                         </ul>
                     </li>
                     <a class="nav-link mx-3 {{ request()->is('informasi') ? 'active' : '' }}"
@@ -126,7 +126,7 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <a class="btn text-dark fs-6 px-4 py-1 mx-3" href="{{ url('/Homepage') }}"
+                <a class="btn text-dark fs-6 px-4 py-1 mx-3" href="{{ url('/admin/dashboardPPDB') }}"
                     style="background-color: #F4DC00; border-radius: 30px;"><b>PPDB</b></a>
             </div>
         </div>

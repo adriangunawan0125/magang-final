@@ -44,8 +44,8 @@
           <a class="nav-link mx-3 {{ request()->is('profile-section') ? 'active' : '' }}"
             href="#profile-section"><b>PROFILE</b></a>
           <li class="nav-item dropdown">
-            <a class="nav-link mx-3 dropdown-toggle {{ request()->is('profil') ? 'active' : '' }}"
-              href="{{ url('/profil') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+            <a class="nav-link mx-3 dropdown-toggle {{ request()->is('') ? 'active' : '' }}"
+              href="{{ url('/') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">PROGRAM PILIHAN</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item {{ request()->is('ma-section') ? 'active' : '' }}"
@@ -171,7 +171,7 @@
             jangan ragu untuk menghubungi kami melalui layanan berikut.
           </p>
         </div>
-        <a href="https://wa.me/62XXXXXXXXXX" target="_blank"
+        <a href="https://wa.me/6285640352942" target="_blank"
           class="btn mt-4 text-white d-inline-flex align-items-center justify-content-center"
           style="background-color: #019965 !important; border-radius: 8px; padding: 12px 24px; font-size: 18px;">
           <i class="fab fa-whatsapp me-2"></i> WhatsApp
@@ -225,20 +225,20 @@
         <div class="col-md-2 d-flex flex-column h-100">
             <h5 class="fw-bold mb-3">Navigasi</h5>
             <ul class="list-unstyled">
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
+                <li><a href="{{ url('admin/home') }}" class="text-blue-500 underline">Home</a></li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Profile</a></li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Program Pilihan</a>
                 </li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">PPDB</a></li>
+                <li><a href="{{ url('/admin/dashboardPPDB') }}" class="text-blue-500 underline">PPDB</a></li>
             </ul>
         </div>
 
         <div class="col-md-2 d-flex flex-column h-100">
             <h5 class="fw-bold mb-3">Website Terkait</h5>
             <ul class="list-unstyled">
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">MA</a></li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">MTS</a></li>
+                <li><a  href="{{ url('/admin/admin_ma') }}" class="text-blue-500 underline">MA</a></li>
+                <li><a  href="{{ url('/admin/admin_mts') }}" class="text-blue-500 underline">MTS</a></li>
             </ul>
         </div>
 
@@ -247,7 +247,7 @@
             <ul class="list-unstyled">
                 <li><a href="https://wa.me/6285640352942" class="text-decoration text-blue">WhatsApp</a></li>
                 <li><a href="mailto:YayasanNufi@gmail.com" class="text-decoration text-blue">Email</a></li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">PPDB</a></li>
+                <li><a href="{{ url('/admin/dashboardPPDB') }}" class="text-blue-500 underline">PPDB</a></li>
             </ul>
         </div>
     </div>

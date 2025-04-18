@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Pagination\Paginator;
 
+
 class BeritaController extends Controller
 {
     public function boot()
@@ -65,9 +66,11 @@ class BeritaController extends Controller
         return redirect()->route('admin.berita.index')->with('success', 'Berita berhasil ditambahkan.');
     }
 
-    public function show(Berita $berita)
+
+    public function show($id)
     {
-        return view('admin.berita.show', compact('berita'));
+        $berita = Berita::findOrFail($id); // Atau pakai slug
+        return view('berita.show', compact('berita'));
     }
 
     public function edit(Berita $berita)

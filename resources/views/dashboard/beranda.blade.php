@@ -177,7 +177,7 @@
                         <p class="text-muted berita-deskripsi text-truncate" style="font-size: 12px;">
                             {{ Str::limit($item->caption, 60) }}
                         </p>
-                        <a href="{{ route('admin.berita.show', $item->id) }}"
+                        <a href="{{ route('berita.show', $item->id) }}"
                             class="text-decoration-none fw-bold text-primary" style="font-size: 12px;">Lihat Detail</a>
                     </div>
                 </div>
@@ -266,15 +266,17 @@
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Program Pilihan</a>
                 </li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">PPDB</a></li>
+                <li>
+                    <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+                </li>      
             </ul>
         </div>
 
         <div class="col-md-2 d-flex flex-column h-100">
             <h5 class="fw-bold mb-3">Website Terkait</h5>
             <ul class="list-unstyled">
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">MA</a></li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">MTS</a></li>
+                <li><a href="{{ url('/ma') }}" class="text-blue-500 underline">MA</a></li>
+                <li><a href="{{ url('/mts') }}" class="text-blue-500 underline">MTS</a></li>
             </ul>
         </div>
 
@@ -283,7 +285,9 @@
             <ul class="list-unstyled">
                 <li><a href="https://wa.me/6285640352942" class="text-decoration text-blue">WhatsApp</a></li>
                 <li><a href="mailto:YayasanNufi@gmail.com" class="text-decoration text-blue">Email</a></li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">PPDB</a></li>
+                <li>
+                    <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+                </li>      
             </ul>
         </div>
     </div>

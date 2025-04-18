@@ -24,7 +24,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-5">
                 <li class="nav-item">
-                    <a class="nav-link px-3 active" href="">HOME</a>
+                    <a class="nav-link px-3 active" href="{{ url('/') }}">HOME</a>
                 </li>
                 <li class="nav-item px-3">
                     <a class="nav-link" href="#">PROFILE</a>
@@ -146,67 +146,42 @@
         </div>
     </section>
 
-    <!-- BERITA -->
-    <section class="berita mb-2">
-    <div class="container my-3">
-        <h2 class="title text-center">BERITA</h2>
-        <div class="row g-3 mt-3">
-            <div class="col-md-6">
-                <div class="berita-card position-relative">
-                    <img src="{{ asset('img/foto1.jpg') }}" alt="Berita 1">
-                    <div class="berita-overlay">
-                        <p>Tim magang USM telah melaksanakan kegiatan magang di Yayasan Nurul Firdaus</p>
+   <!-- Berita Detail -->
+<div class="container mt-5">
+    <h2 class="text-center fw-bold mb-4">BERITA</h2>
+    <div class="row gx-3 gy-3 justify-content-center"> 
+        @forelse($berita->take(4) as $item)
+            <div class="col-6 d-flex justify-content-center"> 
+                <div class="border border-2 border-secondary rounded p-3 shadow-sm bg-white"
+                    style="max-width: 340px; width: 100%;"> 
+                    <div class="text-center">
+                        <img src="{{ Storage::url($item->gambar) }}" alt="Gambar Berita"
+                            class="img-fluid rounded shadow-sm"
+                            style="max-height: 170px; width: 100%; object-fit: cover;"> 
                     </div>
-                    <div class="berita-content">
-                        <p class="text-start"><strong>Rabu, 06 Januari 2025</strong></p>
-                        <p class="text-start">Kegiatan magang USM dimulai pada tanggal 12 Januari dan berakhir pada tanggal 5 Februari 2025</p>
-                        <a href="#" class="lihat-selengkapnya">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="berita-card position-relative">
-                    <img src="{{ asset('img/foto1.jpg') }}" alt="Berita 2">
-                    <div class="berita-overlay">
-                        <p>Tim magang USM telah melaksanakan kegiatan magang di Yayasan Nurul Firdaus</p>
-                    </div>
-                    <div class="berita-content">
-                        <p class="text-start"><strong>Rabu, 06 Januari 2025</strong></p>
-                        <p class="text-start">Kegiatan magang USM dimulai pada tanggal 12 Januari dan berakhir pada tanggal 5 Februari 2025</p>
-                        <a href="#" class="lihat-selengkapnya">Lihat selengkapnya</a>
+                    <div class="mt-2 text-center">
+                        <p class="fw-bold mb-1 text-truncate" style="font-size: 14px;">{{ $item->judul }}</p>
+                        <p class="text-muted mb-2" style="font-size: 12px;">
+                            <strong>{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('l, d F Y') }}</strong><br>
+                            MA Nurul Firdaus, Desa Manggarmas
+                        </p>
+                        <p class="text-muted berita-deskripsi text-truncate" style="font-size: 12px;">
+                            {{ Str::limit($item->caption, 60) }}
+                        </p>
+                        <a href="{{ route('berita.show', $item->id) }}"
+                            class="text-decoration-none fw-bold text-primary" style="font-size: 12px;">Lihat Detail</a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="berita-card position-relative">
-                    <img src="{{ asset('img/foto1.jpg') }}" alt="Berita 3">
-                    <div class="berita-overlay">
-                        <p>Tim magang USM telah melaksanakan kegiatan magang di Yayasan Nurul Firdaus</p>
-                    </div>
-                    <div class="berita-content">
-                        <p class="text-start"><strong>Rabu, 06 Januari 2025</strong></p>
-                        <p class="text-start">Kegiatan magang USM dimulai pada tanggal 12 Januari dan berakhir pada tanggal 5 Februari 2025</p>
-                        <a href="#" class="lihat-selengkapnya">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="berita-card position-relative">
-                    <img src="{{ asset('img/foto1.jpg') }}" alt="Berita 4">
-                    <div class="berita-overlay">
-                        <p>Tim magang USM telah melaksanakan kegiatan magang di Yayasan Nurul Firdaus</p>
-                    </div>
-                    <div class="berita-content">
-                        <p class="text-start"><strong>Rabu, 06 Januari 2025</strong></p>
-                        <p class="text-start">Kegiatan magang USM dimulai pada tanggal 12 Januari dan berakhir pada tanggal 5 Februari 2025</p>
-                        <a href="#" class="lihat-selengkapnya">Lihat selengkapnya</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <a href="#" class="button-berita">Lihat Selengkapnya...</a>
+        @empty
+            <p class="text-center">Belum ada berita.</p>
+        @endforelse
     </div>
-    </section>
+    <div class="text-center mt-3 mb-5">
+        <a href="/berita/home" class="btn text-white px-4 py-2 rounded shadow-sm"
+            style="background-color: #006641; font-weight: bold; font-size: 14px;">Lihat Selengkapnya</a>
+    </div>
+</div>
 
     <!-- SOSIAL MEDIA -->
     <div class="sosmed-container">

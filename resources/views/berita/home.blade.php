@@ -88,7 +88,7 @@
       </p>
     @endif
         <div class="mt-auto text-center">
-          <a href="{{ route('admin.berita.show', $item->id) }}" class="btn btn-primary btn-sm">Lihat Detail</a>
+          <a href="{{ route('berita.show', $item->id) }}" class="btn btn-primary btn-sm">Lihat Detail</a>
         </div>
         </div>
       </div>
@@ -160,7 +160,9 @@
               Pilihan</a></li>
           <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">Informasi</a>
           </li>
-          <li><a href="{{ route('dashboard.beranda') }}" class="text-primary text-decoration-underline">PPDB</a></li>
+          <li>
+            <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+        </li>      
         </ul>
 
       </div>
@@ -168,8 +170,8 @@
       <div class="col-md-2 d-flex flex-column h-100">
         <h5 class="fw-bold mb-3">Website Terkait</h5>
         <ul class="list-unstyled">
-          <li><a href="{{ url('ma-section') }}" class="text-primary text-decoration-underline">MA</a></li>
-          <li><a href="{{ url('mts-section') }}" class="text-primary text-decoration-underline">MTS</a></li>
+          <li><a href="{{ url('/ma') }}" class="text-primary text-decoration-underline">MA</a></li>
+          <li><a href="{{ url('/mts') }}" class="text-primary text-decoration-underline">MTS</a></li>
         </ul>
       </div>
 
@@ -178,7 +180,9 @@
         <ul class="list-unstyled">
           <li><a href="https://wa.me/6285640352942" class="text-primary text-decoration-underline">WhatsApp</a></li>
           <li><a href="mailto:YayasanNufi@gmail.com" class="text-primary text-decoration-underline">Email</a></li>
-          <li><a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a></li>
+          <li>
+            <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+        </li>        
         </ul>
       </div>
     </div>

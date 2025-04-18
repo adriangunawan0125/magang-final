@@ -20,13 +20,13 @@
 
         .navbar .nav-link {
             color: white;
-            font-weight: 500;
             font-size: 1rem;
         }
 
         .navbar .nav-link,
         .navbar .nav-item.dropdown>a.nav-link {
             color: white !important;
+            font-weight: bold;
         }
 
         .navbar .nav-link:hover,
@@ -68,62 +68,63 @@
             background-color: rgba(255, 255, 255, 0.1) !important;
         }
     </style>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-5 bg-body-tertiary">
-        <div class="container">
-            <div class="d-flex align-items-center">
-                @if(Auth::check())
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline"
-                        onsubmit="confirmLogout(); return false;">
-                        @csrf
-                        <button type="submit" class="btn logout-btn" title="Logout">
-                            <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
-                        </button>
-                    </form>
-                @endif
-            </div>
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top px-5 bg-body-tertiary">
+    <div class="container">
+        <div class="d-flex align-items-center">
+            @if(Auth::check())
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline"
+                    onsubmit="confirmLogout(); return false;">
+                    @csrf
+                    <button type="submit" class="btn logout-btn" title="Logout">
+                        <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
+                    </button>
+                </form>
+            @endif
+        </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link mx-3 {{ request()->is('admin/home') ? 'active' : '' }}"
-                        href="{{ url('admin/home') }}"><b>HOME</b></a>
-                    <a class="nav-link mx-3 {{ request()->is('profile-section') ? 'active' : '' }}"
-                        href="#profile-section"><b>PROFILE</b></a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link mx-3 dropdown-toggle {{ request()->is('profil') ? 'active' : '' }}"
-                            href="{{ url('/profil') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false"><b>PROGRAM PILIHAN</b></a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item {{ request()->is('ma-section') ? 'active' : '' }}"
-                                    href="{{ url('ma-section') }}">MA</a></li>
-                            <li><a class="dropdown-item {{ request()->is('mts-section') ? 'active' : '' }}"
-                                    href="{{ url('mts-section') }}">MTS</a></li>
-                        </ul>
-                    </li>
-                    <a class="nav-link mx-3 {{ request()->is('informasi') ? 'active' : '' }}"
-                        href="{{ url('informasi') }}"><b>INFORMASI</b></a>
-                </div>
-            </div>
-
-            <div class="d-flex align-items-center">
-                <a class="btn text-dark fs-6 px-4 py-1 mx-3" href="{{ url('/Homepage') }}"
-                    style="background-color: #F4DC00; border-radius: 30px;"><b>PPDB</b></a>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link mx-3 {{ request()->is('admin/home') ? 'active' : '' }}"
+                    href="{{ url('admin/home') }}"><b>HOME</b></a>
+                <a class="nav-link mx-3 {{ request()->is('profile-section') ? 'active' : '' }}"
+                    href="#profile-section"><b>PROFILE</b></a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link mx-3 dropdown-toggle {{ request()->is('profil') ? 'active' : '' }}"
+                        href="{{ url('/profil') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false"><b>PROGRAM PILIHAN</b></a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item {{ request()->is('ma-section') ? 'active' : '' }}"
+                                href="{{ url('/admin/admin_ma') }}">MA</a></li>
+                        <li><a class="dropdown-item {{ request()->is('/mts-section') ? 'active' : '' }}"
+                                href="{{ url('admin/admin_mts') }}">MTS</a></li>
+                    </ul>
+                </li>
+                <a class="nav-link mx-3 {{ request()->is('informasi') ? 'active' : '' }}"
+                    href="{{ url('informasi') }}"><b>INFORMASI</b></a>
             </div>
         </div>
 
-        <script>
-            function confirmLogout() {
-                if (confirm("Apakah Anda yakin ingin keluar?")) {
-                    document.getElementById('logout-form').submit();
-                }
+        <div class="d-flex align-items-center">
+            <a class="btn text-dark fs-6 px-4 py-1 mx-3" href="{{ url('/admin/dashboardPPDB') }}"
+                style="background-color: #F4DC00; border-radius: 30px;"><b>PPDB</b></a>
+        </div>
+    </div>
+
+    <script>
+        function confirmLogout() {
+            if (confirm("Apakah Anda yakin ingin keluar?")) {
+                document.getElementById('logout-form').submit();
             }
-        </script>
-    </nav>
+        }
+    </script>
+</nav>
+
 
     <div class="container mt-5 pt-4">
         <div class="card shadow">

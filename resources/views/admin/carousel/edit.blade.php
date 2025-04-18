@@ -88,18 +88,20 @@
             padding: 10px;
         }
     </style>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-5">
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top px-5 bg-body-tertiary">
         <div class="container">
-            @if(Auth::check())
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline"
-                    onsubmit="return confirmLogout();">
-                    @csrf
-                    <button type="submit" class="btn logout-btn" title="Logout">
-                        <i class="bi bi-box-arrow-left fs-5"></i>
-                    </button>
-                </form>
-            @endif
+            <div class="d-flex align-items-center">
+                @if(Auth::check())
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline"
+                        onsubmit="confirmLogout(); return false;">
+                        @csrf
+                        <button type="submit" class="btn logout-btn" title="Logout">
+                            <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
+                        </button>
+                    </form>
+                @endif
+            </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -113,15 +115,14 @@
                     <a class="nav-link mx-3 {{ request()->is('profile-section') ? 'active' : '' }}"
                         href="#profile-section"><b>PROFILE</b></a>
                     <li class="nav-item dropdown">
-                        <a class="nav-link mx-3 dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <b>PROGRAM PILIHAN</b>
-                        </a>
-                        <ul class="dropdown-menu">
+                        <a class="nav-link mx-3 dropdown-toggle {{ request()->is('profil') ? 'active' : '' }}"
+                            href="{{ url('/profil') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false"><b>PROGRAM PILIHAN</b></a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item {{ request()->is('ma-section') ? 'active' : '' }}"
-                                    href="{{ url('ma-section') }}">MA</a></li>
-                            <li><a class="dropdown-item {{ request()->is('mts-section') ? 'active' : '' }}"
-                                    href="{{ url('mts-section') }}">MTS</a></li>
+                                    href="{{ url('/admin/admin_ma') }}">MA</a></li>
+                            <li><a class="dropdown-item {{ request()->is('/mts-section') ? 'active' : '' }}"
+                                    href="{{ url('admin/admin_mts') }}">MTS</a></li>
                         </ul>
                     </li>
                     <a class="nav-link mx-3 {{ request()->is('informasi') ? 'active' : '' }}"
@@ -130,17 +131,19 @@
             </div>
 
             <div class="d-flex align-items-center">
-                <a class="btn text-dark fs-6 px-4 py-1 mx-3" href="{{ url('/Homepage') }}"
+                <a class="btn text-dark fs-6 px-4 py-1 mx-3" href="{{ url('/admin/dashboardPPDB') }}"
                     style="background-color: #F4DC00; border-radius: 30px;"><b>PPDB</b></a>
             </div>
         </div>
-    </nav>
 
-    <script>
-        function confirmLogout() {
-            return confirm("Apakah Anda yakin ingin keluar?");
-        }
-    </script>
+        <script>
+            function confirmLogout() {
+                if (confirm("Apakah Anda yakin ingin keluar?")) {
+                    document.getElementById('logout-form').submit();
+                }
+            }
+        </script>
+    </nav>
 
     <div class="content-wrapper">
         <div class="card-header card-header-custom shadow-lg">Edit Slide</div>
