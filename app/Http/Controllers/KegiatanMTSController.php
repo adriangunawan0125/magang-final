@@ -36,7 +36,7 @@ class KegiatanMTSController extends Controller
             'foto' => $fotoPath,
         ]);
 
-        return redirect()->route('kegiatan_mts.index')->with('success', 'Kegiatan berhasil ditambahkan.');
+        return redirect()->route('admin.kegiatan_mts.index')->with('success', 'Kegiatan berhasil ditambahkan.');
     }
 
  
@@ -73,7 +73,7 @@ class KegiatanMTSController extends Controller
         
         $kegiatan_mts->update($data);
 
-        return redirect()->route('kegiatan_mts.index')->with('success', 'Kegiatan berhasil diperbarui.');
+        return redirect()->route('admin.kegiatan_mts.index')->with('success', 'Kegiatan berhasil diperbarui.');
     }
 
    
@@ -84,6 +84,6 @@ class KegiatanMTSController extends Controller
         }
         $kegiatan_mts->delete();
 
-        return redirect()->route('kegiatan_mts.index')->with('success', 'Kegiatan berhasil dihapus.');
+        return redirect()->route('admin.kegiatan_mts.index')->with('success', 'Kegiatan berhasil dihapus.');
     }
 }

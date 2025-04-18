@@ -14,11 +14,11 @@ class MAController extends Controller
     public function index()
     {
         $sambutan = sambutan_ma::first();
-        $carousels = Carousel_ma::all();
+        $carousels_ma = Carousel_ma::all();
         $guru = Guru::all(); 
         $sosmed = Sosmed_ma::all();
         $kegiatans = Kegiatan_ma::all();
 
-        return view('MA.MA', compact('guru', 'sosmed', 'kegiatans', 'carousels', 'sambutan'));
+        return view('MA.MA', compact('guru', 'sosmed', 'kegiatans', 'carousels_ma', 'sambutan'));
     }
 }
