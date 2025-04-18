@@ -117,8 +117,10 @@
         </div>
     </div>
 
-    <div class="welcome">
-        <h2>SELAMAT DATANG DI WEBSITE YAYASAN NURUL FIRDAUS</h2>
+  <div class="welcome">
+        <h2> <marquee behavior="scroll" direction="left" class="text">
+            SELAMAT DATANG DI WEBSITE YAYASAN NURUL FIRDAUS
+        </marquee></h2>
     </div>
 
     <!-- Container Utama -->
