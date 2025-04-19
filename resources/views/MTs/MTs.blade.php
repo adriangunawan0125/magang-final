@@ -16,11 +16,12 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="{{ asset('img/logo-fix.png') }}" alt="Logo Yayasan">
+            <img src="{{ asset('img/MTS NF.png') }}" alt="Logo MTS">
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-5">
                 <li class="nav-item">
@@ -32,10 +33,12 @@
                 <li class="nav-item px-3">
                     <a class="nav-link" href="#">INFORMASI</a>
                 </li>
+                <li class="nav-item px-3">
+                    <!-- Tombol PPDB -->
+                    <a href="#" class="btn btn-ppdb">PPDB</a>
+                </li>
             </ul>
         </div>
-        <!-- Tombol PPDB -->
-        <a href="#" class="btn btn-ppdb d-none d-lg-block">PPDB</a>
 
     </div>
 </nav>
