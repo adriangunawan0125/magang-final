@@ -139,7 +139,7 @@
           <p class="mt-3">
               Jika anda mengalami kendala dalam pengisian formulir pendaftaran, maka hubungi kami melalui chat WhatsApp:
           </p>       
-          <a href="https://wa.me/1234567890" target="_blank" class="btn btn-success px-4">
+          <a href="https://wa.me/6285640352942" target="_blank" class="btn btn-success px-4">
               Hubungi Kami
           </a>
       </div>

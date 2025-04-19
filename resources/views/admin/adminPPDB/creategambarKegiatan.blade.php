@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+{{-- <<<<<<< HEAD
 @extends('Homepage.layout')
 
 @section('content')
@@ -17,8 +17,7 @@
 
                 <div class="mb-3">
                     <label for="gambar" class="form-label fw-bold">Upload Gambar</label>
-                    <input type="file" name="gambar" id="gambar" class="form-control" required>
-=======
+                    <input type="file" name="gambar" id="gambar" class="form-control" required> --}}
 {{-- @extends('Homepage.layout')
 @section('content')
 <form action="{{ route('admin.gambarKegiatan.store') }}" method="POST" enctype="multipart/form-data">
@@ -76,7 +75,6 @@
                 <div class="mb-3">
                     <label class="form-label fw-bold">Gambar Latar Belakang</label>
                     <input type="file" name="gambar" class="form-control" required>
->>>>>>> d5edc109fd6c9b56241f842177d397a2a7cac4f5
                 </div>
 
                 <div class="d-flex justify-content-center gap-3">
@@ -87,8 +85,5 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 
-=======
->>>>>>> d5edc109fd6c9b56241f842177d397a2a7cac4f5
 @endsection

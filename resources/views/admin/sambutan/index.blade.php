@@ -73,7 +73,7 @@
     <div class="container">
         <div class="d-flex align-items-center">
             @if(Auth::check())
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline"
+                <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-inline"
                     onsubmit="confirmLogout(); return false;">
                     @csrf
                     <button type="submit" class="btn logout-btn" title="Logout">

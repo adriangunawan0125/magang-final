@@ -27,7 +27,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 88, 58, 0.4); /* hijau gelap transparan */
   }
 
   .bg-custom .container {
@@ -60,14 +60,14 @@
             <a href="{{ url('/students') }}" 
                class="btn fw-bold text-dark py-2 d-flex align-items-center justify-content-center"
                style="background-color: #FFD700; border-radius: 10px; gap: 8px;">
-              <span style="font-size: 1.2rem;">📋</span> Form Pendaftaran
+              <span style="font-size: 2rem;">📋</span> Form Pendaftaran
             </a>
           </div>
           <div class="col-10 col-md-3">
             <a href="{{ url('/students#datapendaftar') }}" 
                class="btn fw-bold text-white py-2 d-flex align-items-center justify-content-center"
                style="background-color: #3B82F6; border-radius: 10px; gap: 8px;">
-              <span style="font-size: 1.2rem;">👤</span> Data Pendaftar
+              <span style="font-size: 2rem;">👤</span> Data Pendaftar
             </a>
           </div>
         </div>
@@ -100,7 +100,7 @@
       <div class="col-md-4 mb-3">
         <a href="{{ url('/mts') }}" class="text-decoration-none">
           <div class="bg-warning text-success fw-bold d-flex align-items-center justify-content-center"
-            style="font-size: 5rem; border-radius: 8px; height: 200px;">
+            style="font-size: 3rem; border-radius: 8px; height: 200px;">
             MTS
           </div>
         </a>
@@ -109,7 +109,7 @@
       <div class="col-md-4">
         <a href="{{ url('/ma') }}" class="text-decoration-none">
           <div class="bg-warning text-success fw-bold d-flex align-items-center justify-content-center"
-            style="font-size: 5rem; border-radius: 8px; height: 200px;">
+            style="font-size: 3rem; border-radius: 8px; height: 200px;">
             MA
           </div>
         </a>

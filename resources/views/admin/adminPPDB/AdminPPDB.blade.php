@@ -34,20 +34,20 @@
 }
 
 .circle {
-    width: 120px; /* Sesuaikan ukuran lingkaran */
+    width: 120px;
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid #ddd; /* Tambahkan border agar lebih jelas */
+    border: 2px solid #ddd; 
 }
 
 .circle img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Pastikan gambar memenuhi bingkai tanpa terdistorsi */
+    object-fit: cover;
 }
 
 .edit-btn, .delete-btn {
@@ -70,7 +70,7 @@
 
 
 /* .circle { */
-      /* width: 350px;  Sesuaikan ukuran */
+      /* width: 350px; 
       /* height: 350px;
       border-radius: 30px 70px 30px 70px;
       overflow: hidden;
@@ -122,7 +122,7 @@
               </li>
           </ul>
 
-                  <a href="{{ url('/admin/dashboardPPDB') }}"><button type="button" class="fw-bold btn btn-info me-5 text-light">PPDB</button></a>
+                  <a href="{{ url('/admin/students') }}"><button type="button" class="fw-bold btn btn-info me-5 text-light">PPDB</button></a>
       </div>
   </div>
 </nav>

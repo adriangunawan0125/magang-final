@@ -16,7 +16,7 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="{{ asset('img/MA NF.png') }}" alt="Logo MA">
+            <img src="{{ asset('img\MA-Logo.png') }}" alt="Logo MA">
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
                 <li>
                 <li class="nav-item px-3">
                     <!-- Tombol PPDB -->
-                    <a href="#" class="btn btn-ppdb">PPDB</a>
+                    <a href="{{url('Homepage')}}" class="btn btn-ppdb">PPDB</a>
                 </li>
                 </li>
             </ul>
