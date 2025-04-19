@@ -83,19 +83,37 @@
         </marquee>
     </div>
 
-<!-- Sambutan Kepala Sekolah -->
+<!-- Sambutan Kepala Sekolah MTs -->
 <div class="sambutan-container">
     <h2 class="title">SAMBUTAN KEPALA SEKOLAH MTs</h2>
-
+    
     <div class="sambutan-content">
-        <img src="{{ asset($sambutan->foto) }}" alt="Kepala Sekolah" class="sambutan-img">
-        <h3 class="sambutan-nama">{{ $sambutan->nama }}</h3>
-        <p class="sambutan-text">
-            {{ $sambutan->sambutan }}
-        </p>
+        @if(isset($sambutan_mts) && $sambutan_mts)
+            <!-- Display if data exists -->
+            @if($sambutan_mts->foto)
+                <img src="{{ asset($sambutan_mts->foto) }}?v={{ time() }}" 
+                     alt="Kepala Sekolah MTs" 
+                     class="sambutan-img"
+                     onerror="this.style.display='none'">
+            @endif
+            
+            <h3 class="sambutan-nama">{{ $sambutan_mts->nama ?? 'Nama Kepala Sekolah' }}</h3>
+            <p class="sambutan-text">
+                {!! nl2br(e($sambutan_mts->sambutan ?? 'Sambutan akan ditampilkan di sini')) !!}
+            </p>
+        @else
+            <!-- Fallback if no data -->
+            <div class="alert alert-info">Data sambutan belum tersedia.</div>
+            @auth
+                @if(auth()->user()->isAdmin())
+                    <a href="{{ route('admin.sambutan_mts.edit') }}" class="btn btn-sm btn-warning">
+                        <i class="fas fa-plus"></i> Tambah Sambutan
+                    </a>
+                @endif
+            @endauth
+        @endif
     </div>
 </div>
-
 
 
     <!-- Tentang Kami -->
