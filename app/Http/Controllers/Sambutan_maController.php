@@ -27,26 +27,29 @@ class Sambutan_maController extends Controller
     }
 
         // update sambutan
-    public function update(Request $request)
-    {
-        $sambutan = sambutan_ma::first();
+        public function update(Request $request)
+        {
+            $request->validate([
+                'nama' => 'required|string|max:255',
+                'sambutan' => 'required|string',
+                'foto' => 'nullable|image|max:2048',
+            ]);
+        
+            $sambutan = sambutan_ma::first(); // atau by ID jika multiple
+            $sambutan->nama = $request->nama;
+            $sambutan->sambutan = $request->sambutan;
+        
+            if ($request->hasFile('foto')) {
+                $file = $request->file('foto');
+                $filename = time() . '.' . $file->getClientOriginalExtension();
+                $path = $file->storeAs('sambutan_ma', $filename, 'public');
+                $sambutan->foto = 'storage/' . $path;
+            }
+        
+            $sambutan->save();
+        
+            return redirect()->route('admin.sambutan_ma.edit')->with('success', 'Sambutan berhasil diperbarui.');
 
-        $request->validate([
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
-            'nama' => 'required',
-            'sambutan' => 'required'
-        ]);
-
-        if ($request->hasFile('foto')) {
-            $imageName = time().'.'.$request->foto->extension();
-            $request->foto->move(public_path('img'), $imageName);
-            $sambutan->foto = 'img/'.$imageName;
         }
-
-        $sambutan->nama = $request->nama;
-        $sambutan->sambutan = $request->sambutan;
-        $sambutan->save();
-
-        return redirect()->route('ma.index')->with('success', 'Sambutan berhasil diperbarui!');
-    }
+        
 }

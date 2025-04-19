@@ -95,9 +95,17 @@
 <nav class="navbar bg-footer navbar-expand-lg sticky-top px-0 py-3">
   <div class="container-fluid">
       {{-- <img src="{{ asset('asset/logo_nufi.png') }}" class="ms-4" alt="Nurul Firdaus" width="60"> --}}
-      <a href="{{ url('/') }}" class="text-white" style="font-size: 24px; text-decoration: none;">
-        <img src="{{asset('asset/icon-pintu.png')}}" style="width: 30px;" class="ms-5" alt="">
-    </a>
+      <div class="d-flex align-items-center">
+        @if(Auth::check())
+      <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-inline"
+        onsubmit="confirmLogout(); return false;">
+        @csrf
+        <button type="submit" class="btn logout-btn" title="Logout">
+        <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
+        </button>
+      </form>
+    @endif
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
@@ -156,7 +164,7 @@
     <h2 class="fw-bold mb-5">PROGRAM PILIHAN</h2>
     <div class="row justify-content-center">
       <div class="col-md-4 mb-3">
-        <a href="{{ url('/students') }}" class="text-decoration-none">
+        <a href="{{ url('/admin/admin_mts') }}" class="text-decoration-none">
           <div class="bg-warning text-success fw-bold d-flex align-items-center justify-content-center"
             style="font-size: 5rem; border-radius: 8px; height: 200px;">
             MTS
@@ -165,7 +173,7 @@
       </div>
 
       <div class="col-md-4">
-        <a href="{{ url('/students') }}" class="text-decoration-none">
+        <a href="{{ url('/admin/admin_ma') }}" class="text-decoration-none">
           <div class="bg-warning text-success fw-bold d-flex align-items-center justify-content-center"
             style="font-size: 5rem; border-radius: 8px; height: 200px;">
             MA

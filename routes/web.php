@@ -78,7 +78,7 @@ Route::prefix('admin')->group(function () {
 Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(function () {
     // Logout
     Route::post('/logout', [AdminAuthController::class, 'logout'])->name('logout');
-    
+
     // Dashboard
     Route::get('/home', function () {
         return view('admin.home');
@@ -92,14 +92,14 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::post('/ubah-background', [GambarMenuPPDBController::class, 'update'])->name('update-background');
     Route::get('/ubah-jadwal', [GambarJadwalPPDBController::class, 'edit'])->name('jadwal.edit');
     Route::put('/ubah-jadwal', [GambarJadwalPPDBController::class, 'update'])->name('jadwal.update');
-    
+
     // Students
     Route::get('students', [AdminController::class, 'index'])->name('students.index');
     Route::post('students/verify/{id}', [AdminController::class, 'verify'])->name('students.verify');
     Route::get('students/download/{id}', [AdminController::class, 'downloadPrestasi'])->name('students.download');
     Route::delete('students/{id}', [AdminController::class, 'destroy'])->name('students.destroy');
     Route::get('students/{id}', [AdminController::class, 'show'])->name('students.show');
-    
+
     // Gambar Kegiatan
     Route::get('/gambar-kegiatan/create', [GambarKegiatanPPDBController::class, 'create'])->name('gambarKegiatan.create');
     Route::post('/gambar-kegiatan', [GambarKegiatanPPDBController::class, 'store'])->name('gambarKegiatan.store');
@@ -136,8 +136,8 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     // ADMIN MA ROUTES
     // ---------------------------
     Route::get('/admin_ma', [AdminMAController::class, 'index'])->name('MA.admin_ma.admin');
-    Route::get('/sambutan/edit_sambutan', [Sambutan_maController::class, 'edit'])->name('sambutan.edit');
-    Route::put('/update_sambutan', [Sambutan_maController::class, 'update'])->name('sambutan.update');
+    Route::get('/sambutan_ma', [Sambutan_maController::class, 'edit'])->name('sambutan_ma.edit');
+    Route::put('/sambutan_ma/update', [Sambutan_maController::class, 'update'])->name('sambutan_ma.update');
 
     // Guru
     Route::resource('guru', GuruController::class)->except(['show']);

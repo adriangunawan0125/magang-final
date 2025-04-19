@@ -83,18 +83,20 @@
         </marquee>
     </div>
 
-    <!-- Sambutan Kepala Sekolah -->
-    <div class="sambutan-container">
-        <h2 class="title">SAMBUTAN KEPALA SEKOLAH MTs</h2>
-        <div class="sambutan-content">
-            <img src="{{ asset($sambutan->foto) }}" alt="Kepala Sekolah" class="sambutan-img">
-            <h3 class="sambutan-nama">{{ $sambutan->nama }}</h3>
-            <p class="sambutan-text">
-                {{ $sambutan->sambutan }}
-                
-            </p>
-        </div>
+<!-- Sambutan Kepala Sekolah -->
+<div class="sambutan-container">
+    <h2 class="title">SAMBUTAN KEPALA SEKOLAH MTs</h2>
+
+    <div class="sambutan-content">
+        <img src="{{ asset($sambutan->foto) }}" alt="Kepala Sekolah" class="sambutan-img">
+        <h3 class="sambutan-nama">{{ $sambutan->nama }}</h3>
+        <p class="sambutan-text">
+            {{ $sambutan->sambutan }}
+        </p>
     </div>
+</div>
+
+
 
     <!-- Tentang Kami -->
     <section class="tentang-kami section-bg pt-2 pb-2">

@@ -83,12 +83,13 @@
     <div class="sambutan-container">
         <h2 class="title">SAMBUTAN KEPALA SEKOLAH MA</h2>
         <div class="sambutan-content">
-            <img src="{{ asset($sambutan->foto) }}" alt="Kepala Sekolah" class="sambutan-img">
+            <img src="{{ asset($sambutan->foto) }}?v={{ time() }}" alt="Kepala Sekolah" class="sambutan-img">
+
             <h3 class="sambutan-nama">{{ $sambutan->nama }}</h3>
             <p class="sambutan-text">
                 {{ $sambutan->sambutan }}
                 
-            </p>
+         
         </div>
     </div>
 

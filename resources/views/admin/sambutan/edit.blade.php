@@ -76,17 +76,6 @@
    <!-- Navbar -->
    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-5 bg-body-tertiary">
     <div class="container">
-        <div class="d-flex align-items-center">
-            @if(Auth::check())
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline"
-                    onsubmit="confirmLogout(); return false;">
-                    @csrf
-                    <button type="submit" class="btn logout-btn" title="Logout">
-                        <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
-                    </button>
-                </form>
-            @endif
-        </div>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
             aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">

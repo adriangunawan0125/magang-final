@@ -21,6 +21,8 @@ class MAController extends Controller
         $kegiatans = Kegiatan_ma::all();
         $berita = Berita::latest()->get(); // berita ditambahkan
 
+
+
         return view('MA.MA', compact('guru', 'sosmed', 'kegiatans', 'carousels_ma', 'sambutan', 'berita'));
     }
 }

@@ -16,9 +16,17 @@
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <!-- Tombol Kembali -->
-        <a href="{{ route('mts.index') }}" class="out-btn btn btn-back">
-            <i class="fas fa-sign-out-alt"></i>
-        </a>
+        <div class="d-flex align-items-center">
+            @if(Auth::check())
+          <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-inline"
+            onsubmit="confirmLogout(); return false;">
+            @csrf
+            <button type="submit" class="btn logout-btn" title="Logout">
+            <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
+            </button>
+          </form>
+        @endif
+          </div>
 
 
         <!-- Tombol Toggle untuk Mobile -->

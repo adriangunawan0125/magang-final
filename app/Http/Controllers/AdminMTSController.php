@@ -7,6 +7,7 @@ use App\Models\Guru_mts;
 use App\Models\Sosmed_mts;
 use App\Models\Kegiatan_mts;
 use App\Models\Carousel_mts;
+use App\Models\sambutan_mts; // Memastikan ada model sambutan_mts
 
 class AdminMTSController extends Controller
 {
@@ -16,7 +17,9 @@ class AdminMTSController extends Controller
         $sosmed = Sosmed_mts::all();
         $kegiatans = Kegiatan_mts::all();
         $carousels_mts = Carousel_mts::all();
+        $sambutan = sambutan_mts::first();
 
-        return view('MTs.admin_mts.admin', compact('guru', 'sosmed', 'kegiatans', 'carousels_mts'));
+        // Kirim semua data ke view
+        return view('MTs.admin_mts.admin', compact('guru', 'sosmed', 'kegiatans', 'carousels_mts', 'sambutan'));
     }
 }

@@ -98,7 +98,7 @@
     <h2 class="fw-bold mb-5">PROGRAM PILIHAN</h2>
     <div class="row justify-content-center">
       <div class="col-md-4 mb-3">
-        <a href="{{ url('/students') }}" class="text-decoration-none">
+        <a href="{{ url('/mts') }}" class="text-decoration-none">
           <div class="bg-warning text-success fw-bold d-flex align-items-center justify-content-center"
             style="font-size: 5rem; border-radius: 8px; height: 200px;">
             MTS
@@ -107,7 +107,7 @@
       </div>
 
       <div class="col-md-4">
-        <a href="{{ url('/students') }}" class="text-decoration-none">
+        <a href="{{ url('/ma') }}" class="text-decoration-none">
           <div class="bg-warning text-success fw-bold d-flex align-items-center justify-content-center"
             style="font-size: 5rem; border-radius: 8px; height: 200px;">
             MA

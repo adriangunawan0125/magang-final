@@ -128,7 +128,7 @@
     <div class="edit-sambutan-container">
         <h2 class="title">Edit Sambutan</h2>
 
-        <form action="{{ route('sambutan.update') }}" method="POST" enctype="multipart/form-data" class="edit-sambutan">
+        <form action="{{ route('admin.sambutan_ma.update') }}" method="POST" enctype="multipart/form-data" class="edit-sambutan">
             @csrf
             @method('PUT')
 
@@ -150,10 +150,15 @@
 
             <div class="button-group">
                 <button type="submit" class="btn btn-save">Simpan</button>
-                <a href="/admin" class="btn btn-back">Kembali</a>
+                <a href="{{ url('admin/admin_ma')}}" class="btn btn-back">Kembali</a>
             </div>
         </form>
     </div>
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 
     <script>
     document.getElementById("foto").addEventListener("change", function() {

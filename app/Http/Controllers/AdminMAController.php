@@ -7,6 +7,7 @@ use App\Models\Guru;
 use App\Models\Sosmed_ma;
 use App\Models\Kegiatan_ma;
 use App\Models\Carousel_ma;
+use App\Models\sambutan_ma;
 
 class AdminMAController extends Controller
 {
@@ -16,7 +17,8 @@ class AdminMAController extends Controller
         $sosmed = Sosmed_ma::all();
         $kegiatans = Kegiatan_ma::all();
         $carousels = Carousel_ma::all();
+        $sambutan = sambutan_ma::first();
 
-        return view('MA.admin_ma.admin', compact('guru', 'sosmed', 'kegiatans', 'carousels'));
+        return view('MA.admin_ma.admin', compact('guru', 'sosmed', 'kegiatans', 'carousels','sambutan'));
     }
 }
