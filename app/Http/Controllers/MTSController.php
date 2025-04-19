@@ -14,12 +14,12 @@ class MTSController extends Controller
 {
     public function index()
     {
-        $sambutan = sambutan_mts::first();
+        $sambutan_mts = sambutan_mts::first();
         $carousels_mts = Carousel_mts::all();
         $guru = Guru_mts::all(); 
         $sosmed = Sosmed_mts::all();
         $kegiatans = Kegiatan_mts::all();
         $berita = Berita::latest()->get();
-        return view('MTs.MTs', compact('guru', 'sosmed', 'kegiatans', 'carousels_mts', 'sambutan','berita'));
+        return view('MTs.MTs', compact('guru', 'sosmed', 'kegiatans', 'carousels_mts', 'sambutan_mts','berita'));
     }
 }
