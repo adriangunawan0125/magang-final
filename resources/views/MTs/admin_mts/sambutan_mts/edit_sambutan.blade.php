@@ -135,65 +135,49 @@
             <div class="form-group">
                 <label for="foto" class="file-label">Masukkan Foto Kepala Sekolah</label>
                 <input type="file" id="foto" name="foto">
-                <small class="text-danger d-block ">*Maksimal ukuran foto: 2 MB</small>
+                @if(isset($sambutan_mts) && $sambutan_mts->foto)
+                    <div class="current-photo">
+                        <small>Foto Saat Ini:</small>
+                        <img src="{{ asset($sambutan_mts->foto) }}" width="100" class="mt-2">
+                        <input type="hidden" name="existing_foto" value="{{ $sambutan_mts->foto }}">
+                    </div>
+                @endif
+                <small class="text-danger d-block">*Maksimal ukuran foto: 2 MB</small>
             </div>
 
-            <div class="form-container">
-                <h2 class="form-title">Edit Sambutan Kepala Sekolah MTs</h2>
-                
-                <form action="{{ route('admin.sambutan_mts.update') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-            
-                    <div class="form-group">
-                        <label for="foto">Foto Kepala Sekolah</label>
-                        <input type="file" id="foto" name="foto" class="form-control">
-                        @if(isset($sambutan_mts) && $sambutan_mts->foto)
-                            <div class="current-photo">
-                                <small>Foto Saat Ini:</small>
-                                <img src="{{ asset($sambutan_mts->foto) }}" width="100" class="mt-2">
-                                <input type="hidden" name="existing_foto" value="{{ $sambutan_mts->foto }}">
-                            </div>
-                        @endif
-                        <small class="text-muted">Format: JPG/PNG, Maksimal 2MB</small>
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="nama">Nama Kepala Sekolah</label>
-                        <input type="text" id="nama" name="nama" 
-                               value="{{ old('nama', $sambutan_mts->nama ?? '') }}" 
-                               placeholder="Masukkan Nama" class="form-control">
-                    </div>
-            
-                    <div class="form-group">
-                        <label for="sambutan">Kalimat Sambutan</label>
-                        <textarea id="sambutan" name="sambutan" 
-                                  placeholder="Masukkan Kalimat Sambutan"
-                                  class="form-control" rows="5">{{ old('sambutan', $sambutan_mts->sambutan ?? '') }}</textarea>
-                    </div>
-            
-                    <div class="button-group">
-                        <button type="submit" class="btn btn-save">Simpan</button>
-                        <a href="{{ route('admin.mts') }}" class="btn btn-back">Kembali</a>
-                    </div>
-                </form>
+            <div class="form-group">
+                <label for="nama">Nama Kepala Sekolah</label>
+                <input type="text" id="nama" name="nama" value="{{ $sambutan_mts->nama ?? '' }}" placeholder="Masukkan Nama">
             </div>
-            
-            @if(session('success'))
-            <div class="alert alert-success mt-3">
-                {{ session('success') }}
+
+            <div class="form-group">
+                <label for="sambutan">Kalimat Sambutan</label>
+                <textarea id="sambutan" name="sambutan" placeholder="Masukkan Kalimat Sambutan">{{ $sambutan_mts->sambutan ?? '' }}</textarea>
             </div>
-            @endif
-            
-            @if($errors->any())
-            <div class="alert alert-danger mt-3">
-                <ul>
-                    @foreach($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-save">Simpan</button>
+                <a href="{{ url('admin/admin_mts')}}" class="btn btn-back">Kembali</a>
             </div>
-            @endif
+        </form>
+    </div>
+
+    @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <script>
     document.getElementById("foto").addEventListener("change", function() {
         const file = this.files[0]; // Ambil file yang diunggah
@@ -202,6 +186,6 @@
             this.value = ""; // Reset input file
         }
     });
-</script>
+    </script>
 </body>
 </html>
