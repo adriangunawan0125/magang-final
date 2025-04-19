@@ -83,13 +83,15 @@
     <div class="sambutan-container">
         <h2 class="title">SAMBUTAN KEPALA SEKOLAH MA</h2>
         <div class="sambutan-content">
-            <img src="{{ asset($sambutan->foto) }}?v={{ time() }}" alt="Kepala Sekolah" class="sambutan-img">
-
-            <h3 class="sambutan-nama">{{ $sambutan->nama }}</h3>
-            <p class="sambutan-text">
-                {{ $sambutan->sambutan }}
-                
-         
+            @if($sambutan_ma)
+                @if($sambutan_ma->foto)
+                    <img src="{{ asset($sambutan_ma->foto) }}" alt="Kepala Sekolah" class="sambutan-img">
+                @endif
+                <h3 class="sambutan-nama">{{ $sambutan_ma->nama }}</h3>
+                <p class="sambutan-text">{!! nl2br(e($sambutan_ma->sambutan)) !!}</p>
+            @else
+                <div class="alert alert-info">Data sambutan belum tersedia.</div>
+            @endif
         </div>
     </div>
 
