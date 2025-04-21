@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AcaraInformasiController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
+use App\Http\Controllers\AdminInformasiGambarController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminMTSController;
 use App\Http\Controllers\BeritaController;
@@ -30,8 +32,14 @@ use App\Http\Controllers\GuruController;
 use App\Http\Controllers\KegiatanMAController;
 use App\Http\Controllers\SosmedMAController;
 use App\Http\Controllers\CarouselMAController;
+use App\Http\Controllers\KegiatanInformasiController;
 use App\Http\Controllers\MTSController;
 use App\Http\Controllers\MAController;
+use App\Models\AcaraInformasi;
+use App\Models\KegiatanInformasi;
+use App\Models\Statsprofile;
+use App\Http\Controllers\ProfilevmController;
+use App\Http\Controllers\StatsProfileController;
 
 // ===============================
 // PUBLIC ROUTES 
@@ -175,4 +183,40 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
 
     // CRUD Sambutan
     Route::resource('sambutan', SambutanController::class);
+
+    // admin informasi 
+
+    Route::get('/gambar_informasi', [AdminInformasiGambarController::class, 'index'])->name('informasi.index');
+    Route::get('/gambar_informasi/create', [AdminInformasiGambarController::class, 'create'])->name('informasi.create');
+    Route::post('/gambar_informasi', [AdminInformasiGambarController::class, 'store'])->name('informasi.store');
+    Route::get('/gambar_informasi/{id}/edit', [AdminInformasiGambarController::class, 'edit'])->name('informasi.edit');
+    Route::post('/gambar_informasi/{id}', [AdminInformasiGambarController::class, 'update'])->name('informasi.update');
+    Route::delete('/gambar_informasi/{id}', [AdminInformasiGambarController::class, 'destroy'])->name('informasi.destroy');
+
+    Route::get('kegiatan_informasi', [KegiatanInformasiController::class, 'index'])->name('kegiatan_informasi.index');
+    Route::get('kegiatan_informasi/create', [KegiatanInformasiController::class, 'create'])->name('kegiatan_informasi.create');
+    Route::post('kegiatan_informasi', [KegiatanInformasiController::class, 'store'])->name('kegiatan_informasi.store');
+    Route::get('kegiatan_informasi/{kegiatan_informasi}/edit', [KegiatanInformasiController::class, 'edit'])->name('kegiatan_informasi.edit');
+    Route::put('kegiatan_informasi/{kegiatan_informasi}', [KegiatanInformasiController::class, 'update'])->name('kegiatan_informasi.update');
+    Route::delete('kegiatan_informasi/{kegiatan_informasi}', [KegiatanInformasiController::class, 'destroy'])->name('kegiatan_informasi.destroy');
+   
+    Route::get('acara_informasi', [AcaraInformasiController::class, 'index'])->name('acara_informasi.index');
+    Route::get('acara_informasi/create', [AcaraInformasiController::class, 'create'])->name('acara_informasi.create');
+    Route::post('acara_informasi', [AcaraInformasiController::class, 'store'])->name('acara_informasi.store');
+    Route::get('acara_informasi/{acara_informasi}/edit', [AcaraInformasiController::class, 'edit'])->name('acara_informasi.edit');
+    Route::put('acara_informasi/{acara_informasi}', [AcaraInformasiController::class, 'update'])->name('acara_informasi.update');
+    Route::delete('acara_informasi/{acara_informasi}', [AcaraInformasiController::class, 'destroy'])->name('acara_informasi.destroy');
+
+    //admin Profile
+    
+
+    Route::get('profile_visimisi', [ProfilevmController::class, 'index'])->name('profile_visimisi.index');
+    Route::get('profile_visimisi/edit', [ProfilevmController::class, 'edit'])->name('profile_visimisi.edit');
+    Route::put('profile_visimisi/update', [ProfilevmController::class, 'update'])->name('profile_visimisi.update');
+
+
+
+    Route::get('statistik_profile/edit', [StatsProfileController::class, 'edit'])->name('statistik_profile.edit');
+    Route::put('statistik_profile/update', [StatsProfileController::class, 'update'])->name('statistik_profile.update');
+
 });

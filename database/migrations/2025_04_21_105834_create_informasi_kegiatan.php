@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('gambar_jadwal_p_p_d_b_s', function (Blueprint $table) {
+    Schema::create('kegiatan_informasi', function (Blueprint $table) {
         $table->id();
-        $table->string('gambar'); // Menyimpan path gambar jadwal
+        $table->string('nama');
+        $table->string('foto')->nullable(); 
         $table->timestamps();
     });
 }
-
 
     /**
      * Reverse the migrations.
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('gambar_jadwal_p_p_d_b_s');
+        Schema::dropIfExists('informasi_kegiatan');
     }
 };

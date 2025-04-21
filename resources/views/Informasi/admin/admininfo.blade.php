@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Informasi terbaru dari Pondok Pesantren Modern Nurul Firdaus">
   <title>Informasi - Pondok Pesantren Modern Nurul Firdaus</title>
+  <link rel="icon" href="{{ asset('images/logo-fix.png') }}" type="image/png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Slick Carousel CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <!--  Bootstrap Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    {{-- CSS --}}
+    {{-- <link href="{{ asset('css/style_dashboard.css') }}" rel="stylesheet"> --}}
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome -->
@@ -16,10 +26,10 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0a6e31;">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #00583A;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/img/logo.png" alt="Logo Nurul Firdaus" height="40" class="me-2">
+        <img src="{{asset('/img/logo.png')}}" alt="Logo Nurul Firdaus" height="40" class="me-2">
         <span>Nurul Firdaus</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -73,24 +83,10 @@
             </div>
             <div class="carousel-inner rounded shadow">
               <div class="carousel-item active">
-                <img src="assets/img/kegiatan-1.jpg" class="d-block w-100" alt="Informasi 1" style="height: 400px; object-fit: cover;">
+                <img src="" class="d-block w-100" alt="Informasi 1" style="height: 400px; object-fit: cover;">
                 <div class="carousel-caption d-none d-md-block">
                   <h5>Pengumuman PPDB</h5>
                   <p>Pendaftaran santri baru tahun ajaran 2025/2026 telah dibuka</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/kegiatan-2.jpg" class="d-block w-100" alt="Informasi 2" style="height: 400px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Prestasi Santri</h5>
-                  <p>Santri kami berhasil meraih juara dalam kompetisi nasional</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="assets/img/kegiatan-3.jpg" class="d-block w-100" alt="Informasi 3" style="height: 400px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Pembangunan Gedung Baru</h5>
-                  <p>Peresmian gedung perpustakaan baru akan dilaksanakan bulan depan</p>
                 </div>
               </div>
             </div>
@@ -125,7 +121,7 @@
                 <div class="row justify-content-center">
                   <div class="col-md-4 mb-3">
                     <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-1.jpg">
-                      <img src="assets/img/kegiatan-1.jpg" alt="Kegiatan 1" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
+                      <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Kegiatan 1" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
                       <h5 class="mt-2">Mengaji Bersama</h5>
                     </div>
                   </div>
@@ -136,7 +132,7 @@
                 <div class="row justify-content-center">
                   <div class="col-md-4 mb-3">
                     <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-2.jpg">
-                      <img src="assets/img/kegiatan-2.jpg" alt="Kegiatan 2" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
+                      <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Kegiatan 2" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
                       <h5 class="mt-2">Olahraga Pagi</h5>
                     </div>
                   </div>
@@ -147,7 +143,7 @@
                 <div class="row justify-content-center">
                   <div class="col-md-4 mb-3">
                     <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-3.jpg">
-                      <img src="assets/img/kegiatan-3.jpg" alt="Kegiatan 3" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
+                      <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Kegiatan 3" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
                       <h5 class="mt-2">Lomba Tahfidz</h5>
                     </div>
                   </div>
@@ -195,19 +191,19 @@
         <!-- Baris pertama: 3 kartu -->
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="assets/img/acara-1.jpg" alt="Acara 1" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Acara 1" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-footer text-center">Acara 1</div>
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="assets/img/acara-2.jpg" alt="Acara 2" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Acara 2" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-footer text-center">Acara 2</div>
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="assets/img/acara-3.jpg" alt="Acara 3" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Acara 3" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-footer text-center">Acara 3</div>
           </div>
         </div>
@@ -216,79 +212,83 @@
         <!-- Baris kedua: 3 kartu -->
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="assets/img/acara-4.jpg" alt="Acara 4" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Acara 4" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-footer text-center">Acara 4</div>
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="assets/img/acara-5.jpg" alt="Acara 5" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Acara 5" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-footer text-center">Acara 5</div>
           </div>
         </div>
         <div class="col-md-4 mb-3">
           <div class="card">
-            <img src="assets/img/acara-6.jpg" alt="Acara 6" class="card-img-top" style="height: 200px; object-fit: cover;">
+            <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Acara 6" class="card-img-top" style="height: 200px; object-fit: cover;">
             <div class="card-footer text-center">Acara 6</div>
           </div>
         </div>
       </div>
     </div>
   </section>
+ <!-- Footer Section -->
+ <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
+    <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
 
-  <!-- Footer -->
-  <footer class="py-5 text-white" style="background-color: #0a6e31;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <div class="logo">
-            <img src="assets/img/logo.png" alt="Logo Nurul Firdaus">
-            <h5 class="mt-3">Yayasan Pon Pes<br>Modern Nurul Firdaus</h5>
-          </div>
-          <p class="mt-3">Mencetak generasi berakhlak Qur'ani, mandiri, dan berprestasi.</p>
+        <div class="col-md-3 d-flex flex-column h-100 text-center mx-auto">
+            <img src="images/logo-fix.png" alt="Logo Sekolah" width="120" class="mt-2 mx-auto">
+            <p class="mt-2"><i class="bi bi-envelope me-2"></i> YayasanNufi@gmail.com</p>
+            <p><i class="bi bi-telephone me-2"></i> +62 856-4035-2942</p>
+
+            <div class="mt-3">
+                <a href="#" class="me-2"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-instagram fs-4"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-tiktok fs-4"></i></a>
+                <a href="#" class="me-2"><i class="bi bi-linkedin fs-4"></i></a>
+            </div>
         </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5>Navigasi</h5>
-          <ul class="list-unstyled">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="#">Program Pilihan</a></li>
-            <li><a href="informasi.html">Informasi</a></li>
-            <li><a href="#">PPDB</a></li>
-          </ul>
+
+        <div class="col-md-2 d-flex flex-column h-100">
+            <h5 class="fw-bold mb-3">Navigasi</h5>
+            <ul class="list-unstyled">
+                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
+                <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+                <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
+                </li>
+                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
+                <li>
+                    <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+                </li>      
+            </ul>
         </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5>Website terkait</h5>
-          <ul class="list-unstyled">
-            <li><a href="#">MA</a></li>
-            <li><a href="#">MTs</a></li>
-          </ul>
+
+        <div class="col-md-2 d-flex flex-column h-100">
+            <h5 class="fw-bold mb-3">Website Terkait</h5>
+            <ul class="list-unstyled">
+                <li><a href="{{ url('/ma') }}" class="text-blue-500 underline">MA</a></li>
+                <li><a href="{{ url('/mts') }}" class="text-blue-500 underline">MTS</a></li>
+            </ul>
         </div>
-        
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5>Layanan</h5>
-          <ul class="list-unstyled mb-3">
-            <li><i class="fas fa-envelope me-2"></i> <a href="mailto:yayasannurul@gmail.com">yayasannurul@gmail.com</a></li>
-            <li><i class="fas fa-phone me-2"></i> <a href="tel:+6282120112425">+62 821 2011 2425</a></li>
-          </ul>
-          <h5>Media Sosial</h5>
-          <div class="social-icons">
-            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-            <a href="https://www.linkedin.com/company/nurulfirdaus/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          </div>
+
+        <div class="col-md-2 d-flex flex-column h-100">
+            <h5 class="fw-bold mb-3">Layanan</h5>
+            <ul class="list-unstyled">
+                <li><a href="https://wa.me/6285640352942" class="text-decoration text-blue">WhatsApp</a></li>
+                <li><a href="mailto:YayasanNufi@gmail.com" class="text-decoration text-blue">Email</a></li>
+                <li>
+                    <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+                </li>      
+            </ul>
         </div>
-      </div>
-      
-      <div class="text-center copyright">
-        <p>&copy; 2025 Yayasan Nurul Firdaus. All rights reserved.<br>
-        <small>Designed by Tim Magang FTIK USM</small></p>
-      </div>
     </div>
-  </footer>
+
+    <hr class="mt-4" style="border-top: 2px solid #000;">
+
+    <div class="text-center py-1">
+        <p class="mb-0 text-muted">Copyright © 2025 | Yayasan Nurul Firdaus</p>
+        <p class="mb-0 text-muted">Designed by Magang TISI USM</p>
+    </div>
+</footer>
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
