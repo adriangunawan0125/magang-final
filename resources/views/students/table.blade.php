@@ -1,6 +1,12 @@
+<style>
+    .bg-head {
+        background-color: #00583a !important;
+    }
+</style>
+
 <div class="table-responsive">
     <table id="students-table" class="table table-striped table-hover">
-        <thead class="bg-success text-light">
+        <thead class="bg-head text-light">
             <tr class="text-center">
                 <th>No</th>
                 <th>Nama</th>

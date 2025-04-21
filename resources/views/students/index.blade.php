@@ -173,7 +173,7 @@
                         </div>
                 
                         <div class="col-md-2 col-12">
-                            <select name="year" class="form-control w-100">
+                            <select name="year" class="irm-control mt-2 w-100">
                                 <option value="">Semua Tahun</option>
                                 @foreach($years as $year)
                                     <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
@@ -183,8 +183,15 @@
                             </select>
                         </div>
                 
+                        <style>
+                            .btn-filter {
+                                background-color: #00583a !important;
+                                color: white !important;
+                            }
+                
+                        </style>
                         <div class="col-md-3 col-12 d-flex gap-2">
-                            <button class="btn btn-success w-100" type="submit">Filter</button>
+                            <button class="btn btn-filter w-100" type="submit">Filter</button>
                             <button id="resetButton" class="btn btn-secondary w-100" type="button">Reset</button>
                         </div>
                     </div>

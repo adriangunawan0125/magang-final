@@ -1,0 +1,380 @@
+/* assets/css/style.css */
+:root {
+    --primary-color: #00583a;
+    --secondary-color: #ffcc00;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --bg-light: #f8f9fa;
+}
+  
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+  
+/* Navbar Styles */
+.navbar {
+    transition: all 0.3s ease;
+}
+  
+.navbar-shrink {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+  
+.navbar-brand span {
+    font-weight: 600;
+}
+  
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+}
+  
+.nav-link.active {
+    color: var(--secondary-color) !important;
+}
+  
+.btn-primary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-dark);
+    font-weight: 600;
+}
+  
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #e6b800;
+    border-color: #e6b800;
+    color: var(--text-dark);
+}
+  
+/* BG | Overlay Informasi Terbaru*/
+.informasi-bg {
+    position: relative;
+    overflow: hidden;
+}
+
+.informasi-bg .overlay-green {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/kegiatan-2.jpg'); /* Ganti dengan path gambar background*/
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Atur tingkat samar */
+    background-color: green; /* Tambahan layer*/
+    z-index: 0;
+}
+
+.informasi-bg .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    position: relative;
+}
+  
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.hero-section .container {
+    position: relative;
+    z-index: 1;
+}
+  
+/* Visi Misi Section */
+#visi, #misi {
+    padding: 4rem 0;
+}
+  
+.card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+  
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+}
+  
+/* Misi List */
+.list-group-item {
+    padding: 1.25rem;
+    border-left: none;
+    border-right: none;
+}
+  
+.list-group-item .number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    margin-right: 10px;
+    font-size: 0.85rem;
+}
+  
+/* Stats Section */
+.stats-card {
+    background-color: var(--bg-light);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+  
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+  
+.stats-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0.5rem 0;
+}
+  
+.stats-text {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+  
+/* Sejarah Section */
+#sejarah img {
+    max-height: 350px;
+    object-fit: cover;
+    width: 100%;
+}
+  
+/* Kegiatan Section - FIXED */
+.kegiatan-item {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.kegiatan-item:hover {
+    transform: translateY(-5px);
+}
+
+.kegiatan-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.kegiatan-item:hover .kegiatan-img {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk carousel controls di section kegiatan */
+#kegiatanCarousel .carousel-control-prev,
+#kegiatanCarousel .carousel-control-next {
+    width: 5%;
+    background: transparent;
+    opacity: 1;
+}
+  
+#kegiatanCarousel .carousel-control-prev-icon,
+#kegiatanCarousel .carousel-control-next-icon {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(10, 110, 49, 0.7);
+    border-radius: 50%;
+}
+  
+#kegiatanCarousel .carousel-control-prev-icon:hover,
+#kegiatanCarousel .carousel-control-next-icon:hover {
+    background-color: rgba(10, 110, 49, 1);
+}
+  
+/* Indicator styling */
+#kegiatanCarousel .carousel-indicators {
+    bottom: -40px;
+}
+  
+#kegiatanCarousel .carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+  
+/* Modal styling untuk memperbesar gambar */
+#kegiatanModal .modal-body {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+#modalImage {
+    max-height: 80vh;
+    max-width: 100%;
+    object-fit: contain;
+}
+  
+/* Galery Section */
+.acara-card {
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+  
+.acara-card img {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+  
+.acara-card:hover img {
+    transform: scale(1.05);
+}
+  
+.acara-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.75rem;
+    text-align: center;
+}
+  
+/* Carousel styles for informasi section - FIXED */
+#infoCarousel .carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#infoCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 5px;
+    bottom: 20px;
+}
+
+#infoCarousel .carousel-caption h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+  
+/* Animation - FIXED */
+.fade-in {
+    opacity: 1; /* Diubah dari 0 agar konten langsung terlihat */
+    transform: translateY(0); /* Diubah dari translateY(20px) */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+  
+/* Footer Section */
+footer {
+    background-color: var(--primary-color);
+}
+  
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+  
+footer a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+  
+footer .logo img {
+    height: 60px;
+}
+  
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+  
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+  
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+  
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+  
+/* Responsif untuk layar kecil */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        margin-top: 1rem;
+    }
+    
+    .hero-section {
+        padding-top: 7rem;
+    }
+}
+  
+@media (max-width: 768px) {
+    .kegiatan-item {
+        margin-bottom: 15px;
+    }
+    
+    #kegiatanCarousel .carousel-control-prev,
+    #kegiatanCarousel .carousel-control-next {
+        width: 10%;
+    }
+    
+    .carousel-caption {
+        display: block !important;
+        background: rgba(0, 0, 0, 0.6);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 1rem;
+    }
+    
+    .stats-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Menghapus class bg-purple yang tidak perlu */

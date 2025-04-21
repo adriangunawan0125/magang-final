@@ -60,8 +60,14 @@ Route::get('berita/{id}', [BeritaController::class, 'show'])->name('berita.show'
 Route::get('/ma', [MAController::class, 'index'])->name('ma.index');
 Route::get('/mts', [MTSController::class, 'index'])->name('mts.index');
 
-Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel');
 
+Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel');
+Route::get('/profile', function () {
+    return view('profile.profile');
+})->name('profile');
+Route::get('/informasi', function () {
+    return view('Informasi.informasi');
+})->name('informasi');
 // ===============================
 // ADMIN AUTH ROUTES (PUBLIC)
 // ===============================

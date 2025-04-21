@@ -8,10 +8,13 @@
     nav.navbar .nav-link:hover {
         color: rgb(219, 177, 13)!important;
     }
+    .bg-nav {
+        background-color: #00583a !important;
+    }
 </style>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-success fixed-top navbar-dark px-5">
+<nav class="navbar navbar-expand-lg bg-nav fixed-top navbar-dark px-5">
     <div class="container-fluid">
         <img src="{{ asset('asset/logo_nufi.png') }}" alt="Nurul Firdaus" width="60">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"

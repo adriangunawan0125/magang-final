@@ -5,7 +5,7 @@
   
     $gambar = \App\Models\GambarMenuPPDB::first();
 @endphp
-<link href="{{ asset('css/style_dashboard.css') }}" rel="stylesheet">
+
 <style>
   .custom-rounded {
     border-radius: 15px;
@@ -93,7 +93,7 @@
 
 
 <!-- MTS dan MA -->
-<section data-aos="fade-up" id="pilihan" class="bg-success text-white text-center py-5 mt-5 mb-1">
+<section data-aos="fade-up" id="pilihan" class="bg-nav text-white text-center py-5 mt-5 mb-1">
   <div class="container">
     <h2 class="fw-bold mb-5">PROGRAM PILIHAN</h2>
     <div class="row justify-content-center">
@@ -155,9 +155,8 @@
     padding-bottom: 10px;
   }
 </style>
-
- <!-- Footer Section -->
- <footer class="container-fluid py-3 px-4 px-md-5">
+<!-- Footer Section -->
+<footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
   <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
 
       <div class="col-md-3 d-flex flex-column h-100 text-center mx-auto">
@@ -177,19 +176,21 @@
           <h5 class="fw-bold mb-3">Navigasi</h5>
           <ul class="list-unstyled">
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Profile</a></li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Program Pilihan</a>
+              <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+              <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
               </li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">PPDB</a></li>
+              <li>
+                  <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+              </li>      
           </ul>
       </div>
 
       <div class="col-md-2 d-flex flex-column h-100">
           <h5 class="fw-bold mb-3">Website Terkait</h5>
           <ul class="list-unstyled">
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">MA</a></li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">MTS</a></li>
+              <li><a href="{{ url('/ma') }}" class="text-blue-500 underline">MA</a></li>
+              <li><a href="{{ url('/mts') }}" class="text-blue-500 underline">MTS</a></li>
           </ul>
       </div>
 
@@ -198,12 +199,14 @@
           <ul class="list-unstyled">
               <li><a href="https://wa.me/6285640352942" class="text-decoration text-blue">WhatsApp</a></li>
               <li><a href="mailto:YayasanNufi@gmail.com" class="text-decoration text-blue">Email</a></li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">PPDB</a></li>
+              <li>
+                  <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
+              </li>      
           </ul>
       </div>
   </div>
 
-  <hr class="mt-4" style="border-top: 2px solid #000;">
+  <hr class="mt-0" style="border-top: 2px solid #000;">
 
   <div class="text-center py-1">
       <p class="mb-0 text-muted">Copyright © 2025 | Yayasan Nurul Firdaus</p>
