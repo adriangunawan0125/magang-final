@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{asset('/css/styleprofile-info.css')}}">
   <style>
     /* Tambahan CSS untuk memastikan fade-in dan counter berfungsi dengan baik */
     .fade-in {
@@ -84,51 +84,58 @@
       <h1 class="display-4 fw-bold fade-in">ProfiL Yayasan</h1>
     </div>
   </section>
+  @php
+  $bg = $profile->background_image 
+      ? asset('storage/' . $profile->background_image) 
+      : asset('img/default.jpg');
+@endphp
 
-  <!-- Visi Section -->
-  <section id="visi" class="py-5 bg-white shadow">
-    <div class="container">
-      <div class="row justify-content-center">
-         <div class="col-md-8 text-center">
-           <h2 class="mb-4 fade-in">VISI :</h2>
-           <div class="card shadow-sm border-0 fade-in">
-             <div class="card-body p-4 bg-light">
-               <p class="lead fw-bold">TERWUJUDNYA GENERASI YANG BERAKHLAQ QUR'ANI, MANDIRI, DAN BERPRESTASI</p>
-             </div>
-           </div>
-         </div>
+<!-- Visi & Misi Section (gabung background) -->
+<section 
+  class="py-5 text-white shadow" 
+  style="background: url('{{ $bg }}') no-repeat center center; background-size: cover; position: relative;">
+  
+  <!-- Overlay gelap -->
+  <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+
+  <!-- Konten -->
+  <div class="container position-relative" style="z-index: 2;">
+
+    <!-- VISI -->
+    <div class="row justify-content-center mb-5">
+      <div class="col-md-8 text-center">
+        <h2 class="mb-4 fade-in">VISI :</h2>
+        <div class="card shadow-sm border-0 fade-in bg-light text-dark">
+          <div class="card-body p-4">
+            <p class="lead fw-bold">{{ $profile->visi }}</p>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Misi Section -->
-  <section id="misi" class="py-5 bg-light shadow-sm">
-    <div class="container">
-      <div class="row">
-         <div class="col-lg-10 mx-auto">
-           <h2 class="mb-4 text-center fade-in">MISI :</h2>
-           <div class="card shadow-sm border-0">
-             <div class="card-body p-0">
-               <ul class="list-group list-group-flush fade-in">
-                 <li class="list-group-item">
-                   <span class="number">1</span> Menyelenggarakan pendidikan yang berorientasi pada pembiasaan akhlaqul karimah yang diiringi dengan pengembangan intelektual, emosional, dan spiritual.
-                 </li>
-                 <li class="list-group-item">
-                   <span class="number">2</span> Menyelenggarakan manajemen pengelolaan Pondok yang efektif, efisien, transparan dan akuntabel dalam pencapaian prestasi akademik dan non akademik dengan pemanfaatan Teknologi Informasi.
-                 </li>
-                 <li class="list-group-item">
-                   <span class="number">3</span> Melaksanakan pendidikan kecakapan hidup (life skill) guna mewujudkan kemandirian peserta didik.
-                 </li>
-                 <li class="list-group-item">
-                   <span class="number">4</span> Melaksanakan pembelajaran dan bimbingan secara efektif dan efesien sehingga siswa dapat berkembang secara optimal sesuai potensi yang dimiliki.
-                 </li>
-               </ul>
-             </div>
-           </div>
-         </div>
+    <!-- MISI -->
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h2 class="mb-4 text-center fade-in">MISI :</h2>
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-0 bg-white text-dark">
+            <ul class="list-group list-group-flush fade-in">
+              @foreach(explode("\n", $profile->misi) as $index => $item)
+                @if(trim($item) != '')
+                <li class="list-group-item">
+                  <span class="number">{{ $index + 1 }}</span> {{ $item }}
+                </li>
+                @endif
+              @endforeach
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+
+  </div>
+</section>
+
 
   <!-- Sejarah Section -->
   <section id="sejarah" class="py-5">
@@ -154,34 +161,43 @@
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-4 mb-4">
-          <div class="stats-card shadow">
-            <i class="fas fa-user-graduate mb-3 fa-2x"></i>
-            <div class="stats-number" data-target="748">748</div>
-            <div class="stats-text">Peserta didik</div>
+ <!-- Stats Section -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      @if($stats->count())
+        @foreach($stats as $stat)
+          <div class="col-md-4 mb-4">
+            <div class="stats-card shadow text-center p-4 bg-white">
+              <i class="fas fa-user-graduate mb-3 fa-2x"></i>
+              <div class="stats-number" data-target="{{ $stat->peserta_didik }}">{{ $stat->peserta_didik }}</div>
+              <div class="stats-text">Peserta didik</div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="stats-card shadow">
-            <i class="fas fa-chalkboard-teacher mb-3 fa-2x"></i>
-            <div class="stats-number" data-target="8">8</div>
-            <div class="stats-text">Rombel</div>
+          <div class="col-md-4 mb-4">
+            <div class="stats-card shadow text-center p-4 bg-white">
+              <i class="fas fa-chalkboard-teacher mb-3 fa-2x"></i>
+              <div class="stats-number" data-target="{{ $stat->rombel }}">{{ $stat->rombel }}</div>
+              <div class="stats-text">Rombel</div>
+            </div>
           </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="stats-card shadow">
-            <i class="fas fa-users mb-3 fa-2x"></i>
-            <div class="stats-number" data-target="13">13</div>
-            <div class="stats-text">Guru & Tenaga Kependidikan</div>
+          <div class="col-md-4 mb-4">
+            <div class="stats-card shadow text-center p-4 bg-white">
+              <i class="fas fa-users mb-3 fa-2x"></i>
+              <div class="stats-number" data-target="{{ $stat->guru_tenaga_kependidikan }}">{{ $stat->guru_tenaga_kependidikan }}</div>
+              <div class="stats-text">Guru & Tenaga Kependidikan</div>
+            </div>
           </div>
+        @endforeach
+      @else
+        <div class="col-12 text-center">
+          <p class="text-muted">Belum ada data statistik yang tersedia.</p>
         </div>
-      </div>
+      @endif
     </div>
-  </section>
+  </div>
+</section>
+
 
  <!-- Footer Section -->
  <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
@@ -204,7 +220,7 @@
           <h5 class="fw-bold mb-3">Navigasi</h5>
           <ul class="list-unstyled">
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-              <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+              <li><a href="#" class="text-blue-500 underline">Profile</a></li>
               <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
               </li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>

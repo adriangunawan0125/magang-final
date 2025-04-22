@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\AdminInformasiGambarController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminInformasiController;
 use App\Http\Controllers\AdminMTSController;
 use App\Http\Controllers\BeritaController;
 use App\Models\Berita;
@@ -35,11 +36,14 @@ use App\Http\Controllers\CarouselMAController;
 use App\Http\Controllers\KegiatanInformasiController;
 use App\Http\Controllers\MTSController;
 use App\Http\Controllers\MAController;
+use App\Http\Controllers\ProfileController;
 use App\Models\AcaraInformasi;
 use App\Models\KegiatanInformasi;
 use App\Models\Statsprofile;
 use App\Http\Controllers\ProfilevmController;
 use App\Http\Controllers\StatsProfileController;
+
+
 
 // ===============================
 // PUBLIC ROUTES 
@@ -67,15 +71,15 @@ Route::get('berita/{id}', [BeritaController::class, 'show'])->name('berita.show'
 
 Route::get('/ma', [MAController::class, 'index'])->name('ma.index');
 Route::get('/mts', [MTSController::class, 'index'])->name('mts.index');
+Route::get('/informasi', [AdminInformasiController::class, 'index'])->name('informasi.index');
+Route::get('/profile', [ProfileController::class, 'index'])->name('Profile.index');
 
 
 Route::get('/export-excel', [ExportController::class, 'export'])->name('export.excel');
-Route::get('/profile', function () {
-    return view('profile.profile');
-})->name('profile');
-Route::get('/informasi', function () {
-    return view('Informasi.informasi');
-})->name('informasi');
+// Route::get('/profile', function () {
+//     return view('profile.profile');
+// })->name('profile');
+
 // ===============================
 // ADMIN AUTH ROUTES (PUBLIC)
 // ===============================
@@ -97,6 +101,12 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::get('/home', function () {
         return view('admin.home');
     })->name('home');
+    Route::get('/admin_informasi', function () {
+        return view('Informasi.admin.admininfo');
+    })->name('informasi');
+    Route::get('/admin_profile', function () {
+        return view('profile.admin.Adminprofile');
+    })->name('profile');
 
     // ---------------------------
     // ADMIN PPDB ROUTES

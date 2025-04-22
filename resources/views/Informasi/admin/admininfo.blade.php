@@ -63,174 +63,90 @@
     </div>
   </section>
 
-  <!-- Informasi Terbaru Section -->
-  <section class="py-4 position-relative informasi-bg">
-    <div class="overlay-green"></div>
-    <div class="container position-relative">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center text-success fw-bold">INFORMASI TERBARU</h2>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12">
-          <!-- Replace placeholder with actual carousel -->
-          <div id="infoCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#infoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#infoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#infoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner rounded shadow">
-              <div class="carousel-item active">
-                <img src="" class="d-block w-100" alt="Informasi 1" style="height: 400px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Pengumuman PPDB</h5>
-                  <p>Pendaftaran santri baru tahun ajaran 2025/2026 telah dibuka</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#infoCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#infoCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
+  <div class="carousel-item active">
+    <div class="d-flex justify-content-center align-items-center" style="height: 400px; background-color: #d3d3d3; position: relative; border-radius: 12px;">
+      
+      <!-- Tombol ubah gambar -->
+      <a href="{{ route('admin.informasi.edit', 1) }}" 
+         class="btn btn-warning btn-lg fw-bold px-4 py-2 shadow" 
+         style="z-index: 2;">
+        Ubah Gambar
+      </a>
+  
+      <!-- Panah kiri -->
+      <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev" style="width: 5%; left: 10px;">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </a>
+  
+      <!-- Panah kanan -->
+      <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next" style="width: 5%; right: 10px;">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </a>
+  
+    </div>
+  </div>
+  
+  
+<!-- Kegiatan Section -->
+<section class="py-4" style="background-color: #d3d3d3;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-success pt-2 fw-bold">Kegiatan</h2>
       </div>
     </div>
-  </section>
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="position-relative" style="height: 400px; background-color: #d3d3d3; border-radius: 10px;">
+          <img src="{{ asset('/img/kegiatan-1.jpg') }}" 
+               alt="Kegiatan" 
+               class="d-block w-100" 
+               style="height: 100%; object-fit: cover; border-radius: 10px;">
 
-  <!-- Kegiatan Section -->
-  <section class="py-4 bg-light shadow-sm">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center text-success pt-2">Kegiatan</h2>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12 position-relative">
-          <div id="kegiatanCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Item 1 -->
-              <div class="carousel-item active">
-                <div class="row justify-content-center">
-                  <div class="col-md-4 mb-3">
-                    <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-1.jpg">
-                      <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Kegiatan 1" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
-                      <h5 class="mt-2">Mengaji Bersama</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 2 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-md-4 mb-3">
-                    <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-2.jpg">
-                      <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Kegiatan 2" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
-                      <h5 class="mt-2">Olahraga Pagi</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-md-4 mb-3">
-                    <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-3.jpg">
-                      <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Kegiatan 3" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
-                      <h5 class="mt-2">Lomba Tahfidz</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev kegiatan-control" type="button" data-bs-target="#kegiatanCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next kegiatan-control" type="button" data-bs-target="#kegiatanCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+          <!-- Tombol Ubah Gambar di Tengah -->
+          <div class="position-absolute top-50 start-50 translate-middle">
+            <a href="{{ route('admin.kegiatan_informasi.index') }}" class="btn btn-warning btn-lg fw-bold shadow">
+              Ubah Gambar
+            </a>
           </div>
         </div>
       </div>
     </div>
-    
-    <!-- Modal untuk memperbesar gambar -->
-    <div class="modal fade" id="kegiatanModal" tabindex="-1" aria-labelledby="kegiatanModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="kegiatanModalLabel">Detail Kegiatan</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center p-2 d-flex justify-content-center align-items-center">
-            <img src="" id="modalImage" class="img-fluid" alt="Kegiatan Detail" style="max-height: 80vh; max-width: 100%; object-fit: contain;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Acara Tahunan Section -->
-  <section class="py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center text-success">Galery</h2>
-        </div>
+ <!-- Galery Section -->
+<section class="py-4" style="background-color: #d3d3d3;">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-success fw-bold">Galery</h2>
       </div>
-      <div class="row mt-3">
-        <!-- Baris pertama: 3 kartu -->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Acara 1" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 1</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Acara 2" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 2</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Acara 3" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 3</div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <!-- Baris kedua: 3 kartu -->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Acara 4" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 4</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Acara 5" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 5</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Acara 6" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 6</div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <div class="position-relative" style="height: 400px; border-radius: 10px;">
+          <img src="{{ asset('/img/kegiatan-1.jpg') }}" 
+               alt="Galery" 
+               class="d-block w-100" 
+               style="height: 100%; object-fit: cover; border-radius: 10px;">
+          
+          <!-- Tombol Ubah Gambar di Tengah -->
+          <div class="position-absolute top-50 start-50 translate-middle">
+            <a href="{{ route('admin.acara_informasi.index', 1) }}" class="btn btn-warning btn-lg fw-bold shadow">
+              Ubah Gambar
+            </a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
  <!-- Footer Section -->
  <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
     <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
@@ -252,7 +168,7 @@
             <h5 class="fw-bold mb-3">Navigasi</h5>
             <ul class="list-unstyled">
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-                <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+                <li><a href="#" class="text-blue-500 underline">Profile</a></li>
                 <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
                 </li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>

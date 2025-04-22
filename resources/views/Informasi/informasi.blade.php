@@ -6,6 +6,7 @@
   <meta name="description" content="Informasi terbaru dari Pondok Pesantren Modern Nurul Firdaus">
   <title>Informasi - Pondok Pesantren Modern Nurul Firdaus</title>
   <link rel="icon" href="{{ asset('images/logo-fix.png') }}" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Slick Carousel CSS -->
@@ -22,9 +23,10 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{{asset('/css/styleprofile-info.css')}}">
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #00583A;">
     <div class="container">
@@ -63,122 +65,214 @@
     </div>
   </section>
 
-  <!-- Informasi Terbaru Section -->
-  <section class="py-4 position-relative informasi-bg">
-    <div class="overlay-green"></div>
-    <div class="container position-relative">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center text-success fw-bold">INFORMASI TERBARU</h2>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col-12">
-          <!-- Replace placeholder with actual carousel -->
-          <div id="infoCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#infoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#infoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#infoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner rounded shadow">
-              <div class="carousel-item active">
-                <img src="{{asset('/img/kegiatan-1.jpg')}}" class="d-block w-100" alt="Informasi 1" style="height: 400px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Pengumuman PPDB</h5>
-                  <p>Pendaftaran santri baru tahun ajaran 2025/2026 telah dibuka</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src="{{asset('/img/kegiatan-2.jpg')}}" class="d-block w-100" alt="Informasi 2" style="height: 400px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Prestasi Santri</h5>
-                  <p>Santri kami berhasil meraih juara dalam kompetisi nasional</p>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <img src={{asset('/img/kegiatan-3.jpg')}} class="d-block w-100" alt="Informasi 3" style="height: 400px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Pembangunan Gedung Baru</h5>
-                  <p>Peresmian gedung perpustakaan baru akan dilaksanakan bulan depan</p>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#infoCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#infoCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  @php
+  $latar = $informasiGambar->first()?->gambar_latar ?? null;
+@endphp
 
-  <!-- Kegiatan Section -->
-  <section class="py-4 bg-light shadow-sm">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center text-success pt-2">Kegiatan</h2>
-        </div>
+<!-- Informasi Terbaru Section -->
+<section 
+  class="py-4 position-relative informasi-bg" 
+  style="background: url('{{ $latar ? asset('img/' . $latar) : asset('img/default.jpg') }}') no-repeat center center; background-size: cover;">
+  
+  <div class="overlay-green" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,128,0,0.5); z-index: 1;"></div>
+
+  <div class="container position-relative" style="z-index: 2;">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-success fw-bold">INFORMASI TERBARU</h2>
       </div>
-      <div class="row mt-3">
-        <div class="col-12 position-relative">
-          <div id="kegiatanCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <!-- Item 1 -->
-              <div class="carousel-item active">
-                <div class="row justify-content-center">
-                  <div class="col-md-4 mb-3">
-                    <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-1.jpg">
-                      <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Kegiatan 1" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
-                      <h5 class="mt-2">Mengaji Bersama</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 2 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-md-4 mb-3">
-                    <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-2.jpg">
-                      <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Kegiatan 2" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
-                      <h5 class="mt-2">Olahraga Pagi</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Item 3 -->
-              <div class="carousel-item">
-                <div class="row justify-content-center">
-                  <div class="col-md-4 mb-3">
-                    <div class="kegiatan-item text-center" data-img="assets/img/kegiatan-3.jpg">
-                      <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Kegiatan 3" class="img-fluid kegiatan-img" style="width: 100%; height: 200px; object-fit: cover; cursor: pointer; border-radius: 8px;">
-                      <h5 class="mt-2">Lomba Tahfidz</h5>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev kegiatan-control" type="button" data-bs-target="#kegiatanCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next kegiatan-control" type="button" data-bs-target="#kegiatanCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+        <!-- Carousel Start -->
+        <div id="infoCarousel" class="carousel slide" data-bs-ride="carousel">
+          
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            @foreach($informasiGambar as $index => $gambar)
+              <button 
+                type="button" 
+                data-bs-target="#infoCarousel" 
+                data-bs-slide-to="{{ $index }}" 
+                class="{{ $index === 0 ? 'active' : '' }}" 
+                aria-current="{{ $index === 0 ? 'true' : 'false' }}" 
+                aria-label="Slide {{ $index + 1 }}">
+              </button>
+            @endforeach
           </div>
+
+          <!-- Carousel Items -->
+          <div class="carousel-inner rounded shadow">
+            @foreach($informasiGambar as $index => $gambar)
+              <div class="carousel-item {{ $index === 0 ? 'active' : '' }}">
+                <img 
+                  src="{{ asset('img/' . $gambar->gambar_depan) }}" 
+                  class="d-block w-100" 
+                  alt="Informasi {{ $index + 1 }}" 
+                  style="height: 400px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Informasi {{ $index + 1 }}</h5>
+                  <p>Deskripsi untuk informasi ke-{{ $index + 1 }}</p>
+                </div>
+              </div>
+            @endforeach
+          </div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#infoCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#infoCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- Carousel End -->
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<style>
+
+  /* KEGIATAN */
+  html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #DBFCF1;
+    font-family: "Poppins", sans-serif;
+}
+
+.kegiatan-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.kegiatan-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    scrollbar-width: none;
+    background-color: white;
+}
+
+.kegiatan-container::-webkit-scrollbar {
+    display: none;
+}
+
+.kegiatan-item {
+    display: inline-block;
+    width: 300px; 
+    margin: 15px;
+    text-align: center;
+}
+
+.kegiatan-item img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0B4B25;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.kegiatan-item img:hover {
+    transform: scale(1.04);
+}
+
+
+
+.kegiatan-item h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #0B4B25;
+}
+
+
+.kegiatan-control {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #0B4B25;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.kegiatan-control-prev {
+    left: 10px;
+}
+
+.kegiatan-control-next {
+    right: 10px;
+}
+
+</style>
+
+{{-- Kegiatan --}}
+<section class="kegiatan-section mt-2 mb-2">
+  <h2 class="title">KEGIATAN</h2>
+  <div class="kegiatan-container">
+      @foreach ( $kegiatanInformasi as $kegiatan)
+      <div class="kegiatan-item">
+          <img src="{{ asset('storage/'. $kegiatan->foto) }}" alt="{{$kegiatan->nama}}">
+          <h5>{{ $kegiatan->nama }}</h5>
+      </div>
+      @endforeach
+  </div>
+</section>
+
+
+{{-- <section class="py-4 bg-light shadow-sm">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-success pt-2">Kegiatan</h2>
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12 position-relative">
+        <div class="d-flex overflow-hidden">
+          <!-- Tombol Prev -->
+          <button class="carousel-control-prev kegiatan-control" type="button" id="prevButton">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+
+          <!-- Kontainer untuk scrolling gambar -->
+          <div class="d-flex" id="kegiatanScroll" style="scroll-behavior: smooth;">
+            @foreach ($kegiatanInformasi as $kegiatan)
+            <div class="kegiatan-item text-center" style="flex: 0 0 33.333%; padding: 0 10px;">
+              <img src="{{ asset('storage/' . $kegiatan->foto) }}" alt="{{ $kegiatan->nama }}" class="img-fluid rounded-circle" style="width: 150px; height: 150px; object-fit: cover; cursor: pointer;">
+              <h5 class="mt-2">{{ $kegiatan->nama }}</h5>
+            </div>
+            @endforeach
+          </div>
+
+          <!-- Tombol Next -->
+          <button class="carousel-control-next kegiatan-control" type="button" id="nextButton">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
         </div>
       </div>
     </div>
+  </div>
+</section> --}}
+
+
     
     <!-- Modal untuk memperbesar gambar -->
-    <div class="modal fade" id="kegiatanModal" tabindex="-1" aria-labelledby="kegiatanModalLabel" aria-hidden="true">
+    <div class="modal fade mt-5" id="kegiatanModal" tabindex="-1" aria-labelledby="kegiatanModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
           <div class="modal-header">
@@ -194,57 +288,31 @@
   </section>
 
   <!-- Acara Tahunan Section -->
-  <section class="py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="text-center text-success">Galery</h2>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <!-- Baris pertama: 3 kartu -->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Acara 1" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 1</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Acara 2" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 2</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Acara 3" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 3</div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <!-- Baris kedua: 3 kartu -->
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-1.jpg')}}" alt="Acara 4" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 4</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-2.jpg')}}" alt="Acara 5" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 5</div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-          <div class="card">
-            <img src="{{asset('/img/kegiatan-3.jpg')}}" alt="Acara 6" class="card-img-top" style="height: 200px; object-fit: cover;">
-            <div class="card-footer text-center">Acara 6</div>
-          </div>
-        </div>
+<section class="py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="text-center text-success">Galery</h2>
       </div>
     </div>
-  </section>
+    <div class="row mt-3">
+      @foreach($acaraInformasi as $acara)
+        <div class="col-md-4 mb-3">
+          <div class="card">
+            <img 
+              src="{{ asset('storage/' . $acara->foto) }}" 
+              alt="{{ $acara->nama }}" 
+              class="card-img-top" 
+              style="height: 200px; object-fit: cover;"
+            >
+            <div class="card-footer text-center">{{ $acara->nama }}</div>
+          </div>
+        </div>
+      @endforeach
+    </div>
+  </div>
+</section>
+
  <!-- Footer Section -->
  <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
     <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
@@ -266,7 +334,7 @@
             <h5 class="fw-bold mb-3">Navigasi</h5>
             <ul class="list-unstyled">
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-                <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+                <li><a href="#" class="text-blue-500 underline">Profile</a></li>
                 <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
                 </li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
