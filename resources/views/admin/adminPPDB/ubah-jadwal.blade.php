@@ -1,31 +1,44 @@
 @extends('Homepage.layout')
 
 @section('content')
+<style>
+    .bg-snav {
+        background-color: #00583A !important;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #ffcc00 !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffcc00 !important;
+    }
+</style>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-success navbar-light px-0 py-3">
+<nav class="navbar navbar-expand-lg bg-snav navbar-light sticky-top px-0 py-3">
     <div class="container-fluid">
-        {{-- <img src="{{ asset('asset/logo_nufi.png') }}" class="ms-4" alt="Nurul Firdaus" width="60"> --}}
-       
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
-                <li class="nav-item text-light">
-                    <a class="nav-link active ms-5 text-light" style="font-weight: 750 !important" aria-current="page" href="{{url('/admin/dashboardPPDB#jadwal')}}">Jadwal</a>
+                <li class="nav-item">
+                    <a class="nav-link active ms-5 text-light fw-semibold" href="{{ url('/admin/dashboardPPDB#jadwal') }}">Jadwal</a>
                 </li>
-                <li class="nav-item text-light">
-                    <a class="nav-link active ms-5 text-light" aria-current="page" style="font-weight: 750 !important" href="#pilihan">Program</a>
+                <li class="nav-item">
+                    <a class="nav-link active ms-5 text-light fw-semibold" href="#pilihan">Program</a>
                 </li>
-                <li class="nav-item text-light">
-                    <a class="nav-link active ms-5 fw-bold text-light " aria-current="page" style="font-weight: 750 !important" href="{{ url('/admin/students') }}">Data PPDB</a>
+                <li class="nav-item">
+                    <a class="nav-link active ms-5 text-light fw-semibold" href="{{ url('/admin/students') }}">Data PPDB</a>
                 </li>
             </ul>
-  
-                    <a href="{{ url('/admin/dashboardPPDB') }}"><button type="button" class="fw-bold btn btn-info me-5 text-light">PPDB</button></a>
+            <a href="{{ url('/admin/dashboardPPDB') }}">
+                <button type="button" class="btn btn-info fw-bold me-5 text-light">PPDB</button>
+            </a>
         </div>
     </div>
-  </nav>
+</nav>
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="col-md-6">
         <h2 class="text-center fw-bold mb-4 text-dark">Edit Gambar Jadwal</h2>

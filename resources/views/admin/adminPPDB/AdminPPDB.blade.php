@@ -129,8 +129,9 @@
     </div>
 </section>
 
+{{-- data-aos="fade-up" --}}
 <!-- Jadwal -->
-<section data-aos="fade-up" id="jadwal" class="bg-white text-center py-5">
+<section id="jadwal" class="bg-white text-center py-5">
   <div class="container">
     <h3 class="fw-bold text-success me-2 mb-5">JADWAL PENDAFTARAN</h3>
     <div class="d-flex flex-column align-items-center mt-5 mb-5">
@@ -142,7 +143,7 @@
 </section>
 
 <!-- MTS dan MA -->
-<section data-aos="fade-up" id="pilihan" class=" bg-footer text-white text-center py-5 mt-5 mb-1" >
+<section  id="pilihan" class=" bg-footer text-white text-center py-5 mt-5 mb-1" >
   <div class="container">
     <h2 class="fw-bold mb-5">PROGRAM PILIHAN</h2>
     <div class="row justify-content-center">

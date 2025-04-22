@@ -1,8 +1,21 @@
 @extends('Homepage.layout')
 
 @section('content')
+<style>
+    .bg-snav {
+        background-color: #00583A !important;
+    }
+
+    .navbar-nav .nav-link.active {
+        color: #ffcc00 !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffcc00 !important;
+    }
+</style>
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-success navbar-light sticky-top px-0 py-3">
+<nav class="navbar navbar-expand-lg bg-snav navbar-light sticky-top px-0 py-3">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
