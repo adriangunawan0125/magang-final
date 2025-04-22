@@ -47,7 +47,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #00583A;">
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-5" style="background-color: #00583A;">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="{{asset('/img/logo.png')}}" alt="Logo Nurul Firdaus" height="40" class="me-2">
@@ -77,35 +77,35 @@
       </div>
     </div>
   </nav>
-
-  <!-- Profile Header Section -->
-  <section class="py-4">
-    <div class="container">
-      <div class="card border-primary shadow" style="max-width: 600px; margin: auto;">
-        <div class="card-header text-center bg-white">
-          <h5 class="fw-bold text-success mb-0">PROFIL SEKOLAH</h5>
+<!-- Profile Header Section -->
+<section class="px-1" style="margin-top: 100px;">
+  <div class="container">
+    <div class="card shadow py-5 mt-3 px-5" style="max-width: 600px; margin: auto;">
+      <div class="card-header text-center bg-white mt-2 px-5">
+        <h5 class="fw-bold text-success mb-0">PROFIL SEKOLAH</h5>
+      </div>
+      <div class="card-body bg-success text-white">
+        <!-- VISI -->
+        <div class="mb-4">
+          <label for="visi" class="form-label fw-bold">VISI :</label>
+          <div class="bg-light rounded p-3" style="height: 100px;"></div>
         </div>
-        <div class="card-body bg-success text-white">
-          <!-- VISI -->
-          <div class="mb-4">
-            <label for="visi" class="form-label fw-bold">VISI :</label>
-            <div class="bg-light rounded p-3" style="height: 100px;"></div>
-          </div>
-  
-          <!-- MISI -->
-          <div class="mb-4">
-            <label for="misi" class="form-label fw-bold">MISI :</label>
-            <div class="bg-light rounded p-3" style="height: 100px;"></div>
-          </div>
-  
-          <!-- Button -->
-          <div class="text-center">
-            <a href="#" class="btn btn-warning fw-bold w-50">Edit</a>
-          </div>
+
+        <!-- MISI -->
+        <div class="mb-4">
+          <label for="misi" class="form-label fw-bold">MISI :</label>
+          <div class="bg-light rounded p-3" style="height: 100px;"></div>
+        </div>
+
+        <!-- Button -->
+        <div class="text-center">
+          <a href="{{route('admin.profile_visimisi.edit')}}" class="btn btn-warning fw-bold w-50">Edit</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
   
 
 
@@ -135,7 +135,7 @@
 
   <section class="py-5 bg-light">
     <div class="container">
-      <div class="card shadow border-primary" style="max-width: 700px; margin: auto;">
+      <div class="card shadow" style="max-width: 700px; margin: auto;">
         <div class="card-header text-center bg-white">
           <h5 class="fw-bold text-success mb-0">STATISTIK SEKOLAH</h5>
         </div>
@@ -145,7 +145,7 @@
             <div class="col-md-4 mb-3">
               <div class="bg-white text-dark rounded py-3 shadow-sm">
                 <i class="fas fa-user-graduate fa-2x mb-2 text-success"></i>
-                <div class="fw-bold fs-4">1200</div>
+                <div class="fw-bold fs-4">xx</div>
                 <div>Peserta Didik</div>
               </div>
             </div>
@@ -154,7 +154,7 @@
             <div class="col-md-4 mb-3">
               <div class="bg-white text-dark rounded py-3 shadow-sm">
                 <i class="fas fa-chalkboard-teacher fa-2x mb-2 text-success"></i>
-                <div class="fw-bold fs-4">36</div>
+                <div class="fw-bold fs-4">xx</div>
                 <div>Rombel</div>
               </div>
             </div>
@@ -163,7 +163,7 @@
             <div class="col-md-4 mb-3">
               <div class="bg-white text-dark rounded py-3 shadow-sm">
                 <i class="fas fa-users fa-2x mb-2 text-success"></i>
-                <div class="fw-bold fs-4">87</div>
+                <div class="fw-bold fs-4">xx</div>
                 <div>Guru & Tenaga Kependidikan</div>
               </div>
             </div>
@@ -180,12 +180,13 @@
   
 
 
+ 
  <!-- Footer Section -->
  <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
   <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
 
       <div class="col-md-3 d-flex flex-column h-100 text-center mx-auto">
-          <img src="images/logo-fix.png" alt="Logo Sekolah" width="120" class="mt-2 mx-auto">
+          <img src="{{asset('/img/logo.png')}}" alt="Logo Sekolah" width="120" class="mt-2 mx-auto">
           <p class="mt-2"><i class="bi bi-envelope me-2"></i> YayasanNufi@gmail.com</p>
           <p><i class="bi bi-telephone me-2"></i> +62 856-4035-2942</p>
 

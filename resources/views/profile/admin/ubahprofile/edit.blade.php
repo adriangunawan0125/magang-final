@@ -49,7 +49,7 @@
 
         {{-- Tombol --}}
         <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
-        <a href="{{ route('admin.profile_visimisi.index') }}" class="btn btn-secondary">Kembali</a>
+        <a href="{{ url('admin/admin_informasi') }}" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
 @endsection

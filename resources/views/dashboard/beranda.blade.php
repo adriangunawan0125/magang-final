@@ -264,7 +264,7 @@
             <h5 class="fw-bold mb-3">Navigasi</h5>
             <ul class="list-unstyled">
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-                <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+                <li><a href="{{ url('/profile') }}" class="text-blue-500 underline">Profile</a></li>
                 <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
                 </li>
                 <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>

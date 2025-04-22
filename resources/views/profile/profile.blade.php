@@ -79,11 +79,22 @@
   </nav>
 
   <!-- Profile Header Section -->
-  <section class="hero-section py-5 text-center text-white" style="background: url{{asset('/img/hero-bg.jpg')}}" center/cover no-repeat; margin-top: 65px;">
-    <div class="container">
-      <h1 class="display-4 fw-bold fade-in">ProfiL Yayasan</h1>
-    </div>
-  </section>
+{{-- <section class="hero-section py-5 text-center text-white" 
+style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat; margin-top: 70px;">
+<div class="container">
+<h1 class="display-4 fw-bold fade-in">Profil Yayasan</h1>
+</div>
+</section> --}}
+
+<section class="py-5 text-center text-success" 
+         style="background-color: #ffffff !important; margin-top: 70px !important; background-image: none !important;">
+  <div class="container">
+    <h1 class="display-4 fw-bold fade-in">PROFIL YAYASAN </h1>
+  </div>
+</section>
+
+
+
   @php
   $bg = $profile->background_image 
       ? asset('storage/' . $profile->background_image) 

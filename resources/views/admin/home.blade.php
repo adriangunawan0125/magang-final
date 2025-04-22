@@ -42,10 +42,10 @@
           <a class="nav-link mx-3 {{ request()->is('admin/home') ? 'active' : '' }}"
             href="{{ url('admin/home') }}"><b>HOME</b></a>
           <a class="nav-link mx-3 {{ request()->is('profile-section') ? 'active' : '' }}"
-            href="#profile-section"><b>PROFILE</b></a>
+            href="{{url('admin/admin_profile')}}"><b>PROFILE</b></a>
           <li class="nav-item dropdown">
             <a class="nav-link mx-3 dropdown-toggle {{ request()->is('') ? 'active' : '' }}"
-              href="{{ url('/') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
+              href="{{ url('/dasboardPPDB#pilihan') }}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
               aria-expanded="false">PROGRAM PILIHAN</a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
               <li><a class="dropdown-item {{ request()->is('ma-section') ? 'active' : '' }}"
@@ -55,7 +55,7 @@
             </ul>
           </li>
           <a class="nav-link mx-3 {{ request()->is('informasi') ? 'active' : '' }}"
-            href="{{ url('informasi') }}"><b>INFORMASI</b></a>
+            href="{{ url('/admin/admin_informasi') }}"><b>INFORMASI</b></a>
         </div>
       </div>
 

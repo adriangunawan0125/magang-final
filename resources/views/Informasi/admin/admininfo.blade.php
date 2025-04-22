@@ -63,33 +63,192 @@
     </div>
   </section>
 
-  <div class="carousel-item active">
-    <div class="d-flex justify-content-center align-items-center" style="height: 400px; background-color: #d3d3d3; position: relative; border-radius: 12px;">
-      
-      <!-- Tombol ubah gambar -->
-      <a href="{{ route('admin.informasi.edit', 1) }}" 
-         class="btn btn-warning btn-lg fw-bold px-4 py-2 shadow" 
-         style="z-index: 2;">
-        Ubah Gambar
-      </a>
-  
-      <!-- Panah kiri -->
-      <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev" style="width: 5%; left: 10px;">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </a>
-  
-      <!-- Panah kanan -->
-      <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next" style="width: 5%; right: 10px;">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </a>
-  
+<!-- Struktural Section -->
+<div class="w-100 mt-2 p-0" style="background-color: #fff;">
+  <div class="row g-0 justify-content-center">
+    <div class="col-12">
+      <div class="card shadow-lg border-0 text-center m-0 p-0">
+        <div class="card-body p-3">
+          <h2 class="card-title fw-bold py-3">INFORMASI</h2>
+          @if(session('success'))
+      <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
+          <a href="{{ route('admin.informasi.index',1) }}" class="btn mt-5 text-dark fw-bold"
+            style="margin-bottom: 200px; background-color: #F4DC00;">
+            Ubah Gambar
+          </a>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<style>
+  /* KEGIATAN */
+  .kegiatan-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: white;
+      box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+  }
   
+  .kegiatan-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      padding: 20px;
+  }
   
-<!-- Kegiatan Section -->
+  .circle {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid #0B4B25;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      color: gray;
+      background-color: white;
+      
+  }
+  
+  button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  .kegiatan i {
+      transition: transform 0.3s ease-in-out;
+  }
+  .kegiatan i:hover {
+      transform: scale(1.05);
+  }
+  .edit-btn {
+      background-color: #FFD700;
+      color: black;
+      transition: transform 0.3s ease-in-out;
+  }
+  .edit-btn:hover {
+      transform: scale(1.05);
+  }
+  .create-btn {
+      background-color: #FFD700;
+      color: black;
+      transition: transform 0.3s ease-in-out;
+  }
+  .create-btn:hover {
+      transform: scale(1.05);
+  }
+  
+  //* Acara Tahunan */
+  .kegiatan-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.kegiatan-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.acara-card {
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.acara-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-card {
+    font-size: 50px;
+    color: gray;
+    margin-bottom: 15px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-btn,
+.create-btn {
+    background-color: #FFD700;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.edit-btn:hover,
+.create-btn:hover {
+    transform: scale(1.05);
+}
+
+  </style>
+
+ <!-- Kegiatan -->
+ <section class="kegiatan-section mt-2 mb-2">
+  <h2 class="title">KEGIATAN</h2>
+  <div class="kegiatan-container">
+      <div class="kegiatan">
+          <div class="circle">
+              <i class="fas fa-trash-alt"></i> 
+          </div>
+          <a href="{{ route('admin.kegiatan_informasi.index') }}">
+              <button class="edit-btn">Edit</button>
+          </a>
+      </div>
+      <div class="kegiatan">
+          <div class="circle">
+              <i class="fas fa-plus"></i> 
+          </div>
+          <a href="{{ route('admin.kegiatan_informasi.index') }}">
+              <button class="create-btn">Create</button>
+              </a>
+      </div>
+      <div class="kegiatan">
+          <div class="circle">
+              <i class="fas fa-plus"></i>
+          </div>
+          <a href="{{ route('admin.kegiatan_informasi.index') }}">
+              <button class="create-btn">Create</button>
+          </a>
+      </div>
+  </div>
+</section>
+
+  
+{{-- <!-- Kegiatan Section -->
 <section class="py-4" style="background-color: #d3d3d3;">
   <div class="container">
     <div class="row">
@@ -115,44 +274,47 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 
 
-  <!-- Acara Tahunan Section -->
- <!-- Galery Section -->
-<section class="py-4" style="background-color: #d3d3d3;">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <h2 class="text-center text-success fw-bold">Galery</h2>
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col-12">
-        <div class="position-relative" style="height: 400px; border-radius: 10px;">
-          <img src="{{ asset('/img/kegiatan-1.jpg') }}" 
-               alt="Galery" 
-               class="d-block w-100" 
-               style="height: 100%; object-fit: cover; border-radius: 10px;">
-          
-          <!-- Tombol Ubah Gambar di Tengah -->
-          <div class="position-absolute top-50 start-50 translate-middle">
-            <a href="{{ route('admin.acara_informasi.index', 1) }}" class="btn btn-warning btn-lg fw-bold shadow">
-              Ubah Gambar
-            </a>
+<!-- Acara Tahunan -->
+<section class="kegiatan-section mt-2 mb-5">
+  <h2 class="title">Acara Tahunan</h2>
+  <div class="kegiatan-container mb-4">
+      <div class="acara-card">
+          <div class="card-body">
+              <i class="fas fa-trash-alt icon-card"></i> 
+              <a href="{{ route('admin.acara_informasi.index') }}">
+                  <button class="edit-btn">Edit</button>
+              </a>
           </div>
-        </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="acara-card">
+          <div class="card-body">
+              <i class="fas fa-plus icon-card"></i> 
+              <a href="{{ route('admin.acara_informasi.index') }}">
+                  <button class="create-btn">Create</button>
+              </a>
+          </div>
+      </div>
+      <div class="acara-card">
+          <div class="card-body">
+              <i class="fas fa-plus icon-card"></i> 
+              <a href="{{ route('admin.acara_informasi.index') }}">
+                  <button class="create-btn">Create</button>
+              </a>
+          </div>
+      </div>
+  </div
+
+
 
  <!-- Footer Section -->
  <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
     <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
 
         <div class="col-md-3 d-flex flex-column h-100 text-center mx-auto">
-            <img src="images/logo-fix.png" alt="Logo Sekolah" width="120" class="mt-2 mx-auto">
+            <img src="{{asset('/img/logo.png')}}" alt="Logo Sekolah" width="120" class="mt-2 mx-auto">
             <p class="mt-2"><i class="bi bi-envelope me-2"></i> YayasanNufi@gmail.com</p>
             <p><i class="bi bi-telephone me-2"></i> +62 856-4035-2942</p>
 
