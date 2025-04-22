@@ -34,6 +34,7 @@ use App\Http\Controllers\KegiatanMAController;
 use App\Http\Controllers\SosmedMAController;
 use App\Http\Controllers\CarouselMAController;
 use App\Http\Controllers\KegiatanInformasiController;
+use App\Http\Controllers\KegiatanWebPPDBController;
 use App\Http\Controllers\MTSController;
 use App\Http\Controllers\MAController;
 use App\Http\Controllers\ProfileController;
@@ -42,7 +43,7 @@ use App\Models\KegiatanInformasi;
 use App\Models\Statsprofile;
 use App\Http\Controllers\ProfilevmController;
 use App\Http\Controllers\StatsProfileController;
-
+use App\Models\KegiatanWebPPDB;
 
 
 // ===============================
@@ -225,8 +226,14 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::put('profile_visimisi/update', [ProfilevmController::class, 'update'])->name('profile_visimisi.update');
 
 
-
+    
     Route::get('statistik_profile/edit', [StatsProfileController::class, 'edit'])->name('statistik_profile.edit');
     Route::put('statistik_profile/update', [StatsProfileController::class, 'update'])->name('statistik_profile.update');
 
+    Route::get('/kegiatan_ppdb', [KegiatanWebPPDBController::class, 'index'])->name('kegiatan_ppdb.index');
+    Route::get('/kegiatan_ppdb/create', [KegiatanWebPPDBController::class, 'create'])->name('kegiatan_ppdb.create');
+    Route::post('/kegiatan_ppdb', [KegiatanWebPPDBController::class, 'store'])->name('kegiatan_ppdb.store');
+    Route::get('/kegiatan_ppdb/{id}/edit', [KegiatanWebPPDBController::class, 'edit'])->name('kegiatan_ppdb.edit');
+    Route::put('/kegiatan_ppdb/{id}', [KegiatanWebPPDBController::class, 'update'])->name('kegiatan_ppdb.update');
+    Route::delete('/kegiatan_ppdb/{id}', [KegiatanWebPPDBController::class, 'destroy'])->name('kegiatan_ppdb.destroy');
 });

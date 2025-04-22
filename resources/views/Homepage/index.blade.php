@@ -41,7 +41,79 @@
 
   .bg-footer {
     background-color: #00583a;
+    
   }
+  .kegiatan-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: white;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+.kegiatan-container {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    scrollbar-width: none;
+    background-color: white;
+}
+
+.kegiatan-container::-webkit-scrollbar {
+    display: none;
+}
+
+.kegiatan-item {
+    display: inline-block;
+    width: 300px; 
+    margin: 15px;
+    text-align: center;
+}
+
+.kegiatan-item img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0B4B25;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+}
+
+.kegiatan-item img:hover {
+    transform: scale(1.04);
+}
+
+
+
+.kegiatan-item h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #0B4B25;
+}
+
+
+.kegiatan-control {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: #0B4B25;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.kegiatan-control-prev {
+    left: 10px;
+}
+
+.kegiatan-control-next {
+    right: 10px;
+}
+
 </style>
 
 
@@ -118,43 +190,19 @@
   </div>
 </section>
 
-<!-- Kegiatan -->
-<section data-aos="fade-up" id="kegiatan" class="py-5 bg-light mt-2 mb-3">
-  <div class="container text-center">
-      <h2 class="mb-5 fw-bold text-success">KEGIATAN</h2>
-      <div class="row">
-          @foreach($gambarKegiatan as $gk)
-              <div class="col-md-4">
-                  <div class="circle">
-                      <img src="{{ asset('storage/' . $gk->gambar) }}" alt="Kegiatan">
-                  </div>
-              </div>
-          @endforeach
+{{-- Kegiatan --}}
+<section class="kegiatan-section mt-2 mb-2">
+  <h2 class="title mb-4 fw-bold">KEGIATAN</h2>
+  <div class="kegiatan-container">
+      @foreach ($kegiatan as $item)
+      <div class="kegiatan-item">
+          <img src="{{ asset('storage/' . $item->foto) }}" alt="{{ $item->nama }}">
+          <h5>{{ $item->nama }}</h5>
       </div>
+      @endforeach
   </div>
 </section>
 
-  
-<style>
-  .circle {
-    width: 350px;  /* Ukuran lingkaran */
-    height: 350px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: auto;
-  }
-
-  .circle img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .row > .col-md-4 {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-</style>
 <!-- Footer Section -->
 <footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
   <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
@@ -176,7 +224,7 @@
           <h5 class="fw-bold mb-3">Navigasi</h5>
           <ul class="list-unstyled">
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-              <li><a href="{{ route('profile') }}" class="text-blue-500 underline">Profile</a></li>
+              <li><a href="#" class="text-blue-500 underline">Profile</a></li>
               <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
               </li>
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>

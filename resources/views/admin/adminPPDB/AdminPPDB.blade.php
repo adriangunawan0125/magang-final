@@ -237,36 +237,37 @@
   </div>
 </section> --}}
 
-<section class="kegiatan-section mt-2 mb-2">
+ <!-- Kegiatan -->
+ <section class="kegiatan-section mt-2 mb-2">
   <h2 class="title">KEGIATAN</h2>
   <div class="kegiatan-container">
-      @foreach($gambarKegiatan as $gk)
-          <div class="kegiatan">
-              <div class="circle">
-                  <img src="{{ asset('storage/' . $gk->gambar) }}" alt="Kegiatan">
-              </div>
-              <a href="{{ route('admin.gambarKegiatan.edit', $gk->id) }}">
-                  <button class="edit-btn">Edit</button>
-              </a>
-              <form action="{{ route('admin.gambarKegiatan.destroy', $gk->id) }}" method="POST" class="d-inline">
-                  @csrf
-                  @method('DELETE')
-                  <button type="submit" class="delete-btn">Hapus</button>
-              </form>
+      <div class="kegiatan">
+          <div class="circle">
+              <i class="fas fa-trash-alt"></i> 
           </div>
-      @endforeach
-
-      <!-- Tambah kegiatan baru -->
+          <a href="{{ route('admin.kegiatan_ppdb.index') }}">
+              <button class="edit-btn">Edit</button>
+          </a>
+      </div>
       <div class="kegiatan">
           <div class="circle">
               <i class="fas fa-plus"></i> 
           </div>
-          <a href="{{ route('admin.gambarKegiatan.create') }}">
+          <a href="{{ route('admin.kegiatan_ppdb.index') }}">
+              <button class="create-btn">Create</button>
+              </a>
+      </div>
+      <div class="kegiatan">
+          <div class="circle">
+              <i class="fas fa-plus"></i>
+          </div>
+          <a href="{{ route('admin.kegiatan_ppdb.index') }}">
               <button class="create-btn">Create</button>
           </a>
       </div>
   </div>
 </section>
+
 
 
 

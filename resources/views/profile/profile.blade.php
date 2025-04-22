@@ -151,14 +151,14 @@ style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat
   <!-- Sejarah Section -->
   <section id="sejarah" class="py-5">
     <div class="container">
-      <h2 class="mb-4 text-center fade-in">SEJARAH</h2>
+      <h2 class="mb-5 text-center fade-in fw-bold text-dark">SEJARAH</h2>
       <div class="row align-items-center">
         <div class="col-md-6 mb-4 mb-md-0">
           <div class="fade-in">
-            <p>
+            <p class="fw-bold text-dark">
               Yayasan Nurul Firdaus berdiri sebagai wujud tekad dan visi seorang pemuda bernama M. Noorsyambudi dari Desa Manggarmas. Pada tahun 1980, ia memulai perjalanan ke Pondok Pesantren Gontor untuk memperdalam ilmu agama dan pendidikan. Sekembalinya dari Gontor, K.H. M. Noorsyambudi bercita-cita memajukan pendidikan di desanya, yang saat itu sebagian besar masyarakatnya hanya mengenyam pendidikan dasar. Dengan dorongan keluarga, ia mendirikan Pondok Pesantren Modern Nurul Firdaus pada 17 Sya'ban 1405 H (8 Mei 1985). Awalnya, pondok ini berdiri di atas lahan seluas 750 m² dengan bangunan sederhana berupa rumah dan mushola. Santri pertama berjumlah 53 orang, terdiri dari 11 santri mukim putra, 15 santri mukim putri, dan 27 santri kalong.
             </p>
-            <p>
+            <p class="fw-bold text-dark">
               Seiring berjalannya waktu, Yayasan Nurul Firdaus terus berkembang baik dari segi fasilitas maupun jumlah santri. Pada tahun 1989, yayasan ini membuka jenjang pendidikan formal, yaitu Madrasah Tsanawiyah (MTs) dan Madrasah Aliyah (MA), guna memberi kesempatan santri melanjutkan pendidikan ke tingkat yang lebih tinggi. Sejak itu, lembaga ini menjadi lembaga pendidikan yang tidak hanya menekankan nilai-nilai keislaman, tetapi juga memadukan kurikulum modern untuk membentuk generasi yang berakhlak Qur'ani, mandiri, dan inspiratif.
             </p>
           </div>
@@ -173,7 +173,7 @@ style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat
   </section>
 
  <!-- Stats Section -->
-<section class="py-5 bg-light">
+<section class="py-5 bg-success">
   <div class="container">
     <div class="row justify-content-center">
       @if($stats->count())
@@ -182,21 +182,21 @@ style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat
             <div class="stats-card shadow text-center p-4 bg-white">
               <i class="fas fa-user-graduate mb-3 fa-2x"></i>
               <div class="stats-number" data-target="{{ $stat->peserta_didik }}">{{ $stat->peserta_didik }}</div>
-              <div class="stats-text">Peserta didik</div>
+              <div class="stats-text fw-bold">Peserta didik</div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <div class="stats-card shadow text-center p-4 bg-white">
               <i class="fas fa-chalkboard-teacher mb-3 fa-2x"></i>
               <div class="stats-number" data-target="{{ $stat->rombel }}">{{ $stat->rombel }}</div>
-              <div class="stats-text">Rombel</div>
+              <div class="stats-text fw-bold">Rombel</div>
             </div>
           </div>
           <div class="col-md-4 mb-4">
             <div class="stats-card shadow text-center p-4 bg-white">
               <i class="fas fa-users mb-3 fa-2x"></i>
               <div class="stats-number" data-target="{{ $stat->guru_tenaga_kependidikan }}">{{ $stat->guru_tenaga_kependidikan }}</div>
-              <div class="stats-text">Guru & Tenaga Kependidikan</div>
+              <div class="stats-text fw-bold">Guru & Tenaga Kependidikan</div>
             </div>
           </div>
         @endforeach

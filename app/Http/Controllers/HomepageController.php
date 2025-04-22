@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GambarMenuPPDB;
 use Illuminate\Http\Request;
-use App\Models\GambarKegiatanPPDB;
+use App\Models\KegiatanWebPPDB;
 
 
 class HomepageController extends Controller
@@ -13,10 +14,18 @@ class HomepageController extends Controller
     //     return view('Homepage.index');
     // }
 
-    public function index()
-    {
-        $gambarKegiatan = GambarKegiatanPPDB::all();
-        return view('Homepage.index', compact('gambarKegiatan'));
-    }
+    // public function index()
+    // {
+    //     $gambarKegiatan = GambarKegiatanPPDB::all();
+    //     return view('Homepage.index', compact('gambarKegiatan'));
+    // }
     
+    public function index()
+
+{
+    $gambar = GambarMenuPPDB::first();
+    $kegiatan = KegiatanWebPPDB::all();
+    return view('Homepage.index', compact('kegiatan'));
+}
+
 }
