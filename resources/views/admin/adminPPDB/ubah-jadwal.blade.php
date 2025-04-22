@@ -5,9 +5,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top bg-success navbar-light px-0 py-3">
     <div class="container-fluid">
         {{-- <img src="{{ asset('asset/logo_nufi.png') }}" class="ms-4" alt="Nurul Firdaus" width="60"> --}}
-        <a href="{{ url('/admin/dashboardPPDB') }}" class="text-white" style="font-size: 24px; text-decoration: none;">
-          <img src="{{asset('asset/icon-pintu.png')}}" style="width: 30px;" class="ms-5" alt="">
-      </a>
+       
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,7 +28,7 @@
   </nav>
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="col-md-6">
-        <h2 class="text-center fw-bold mb-4 text-dark">Ubah Gambar Jadwal</h2>
+        <h2 class="text-center fw-bold mb-4 text-dark">Edit Gambar Jadwal</h2>
 
         @if(session('success'))
             <div class="alert alert-success text-center">{{ session('success') }}</div>
@@ -48,7 +46,7 @@
                 
                 <div class="d-flex justify-content-center gap-3">
                     <button type="submit" class="btn btn-warning fw-bold px-4">Update</button>
-                    <a href="/Homepage" class="btn btn-danger fw-bold px-4">Kembali</a>
+                    <a href="{{ url('/admin/dashboardPPDB') }}" class="btn btn-danger fw-bold px-4">Kembali</a>
                 </div>
             </form>
         </div>

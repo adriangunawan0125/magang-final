@@ -2,9 +2,9 @@
 
 @section('content')
 <style>
-    .navbar-custom {
-        background-color: #005e2e;
-    }
+    .bg-footer {
+    background-color: #00583a;
+  }
     .nav-link:hover {
         color: yellow !important;
     }
@@ -16,38 +16,41 @@
         padding: 5px 15px;
     }
 </style>
-{{-- navbar --}}
-<nav class="navbar navbar-expand-lg navbar-custom mb-3 py-3">
-    <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
-            <i class="fa-solid fa-door-open" style="color:  #ffc107"></i>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+<!-- Navbar -->
+<nav class="navbar bg-footer navbar-expand-lg sticky-top px-0 py-3">
+    <div class="container-fluid">
+        {{-- <img src="{{ asset('asset/logo_nufi.png') }}" class="ms-4" alt="Nurul Firdaus" width="60"> --}}
+        <div class="d-flex align-items-center">
+          @if(Auth::check())
+        <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" class="d-inline"
+          onsubmit="confirmLogout(); return false;">
+          @csrf
+          <button type="submit" class="btn logout-btn" title="Logout">
+          <i class="bi bi-box-arrow-left fs-5" style="color: #F4DC00;"></i>
+          </button>
+        </form>
+      @endif
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item fw-bold ms-5">
-                    <a class="nav-link  text-light" href="{{url('admin/dashboardPPDB')}}">JADWAL</a>
+                    <a class="nav-link  text-light" href="{{url('admin/dashboardPPDB#jadwal')}}">JADWAL</a>
                 </li>
                 <li class=" ms-5 nav-item fw-bold">
-                    <a class="nav-link text-light" href="#">PROGRAM</a>
+                    <a class="nav-link text-light" href="{{url('admin/dashboardPPDB#pilihan')}}">PROGRAM</a>
                 </li>
-                {{-- <li class="nav-item dropdown"> 
-                    <a class="nav-link dropdown-toggle ms-5 fw-bold text-light" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">PROGRAM PILIHAN</a>
-                    <ul class="dropdown-menu ms-5" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item fw-bold" href="{{url('/profil#profile-section')}}">MTS</a></li>
-                        <li><a class="dropdown-item fw-bold" href="{{url('/profil#sejarah-section')}}">MA</a></li>
-                    </ul>
-                </li>  --}}
-                <li class=" ms-5 nav-item fw-bold">
-                    <a class="nav-link active text-light" href="#">DATA PPDB</a>
-                </li>
+               
             </ul>
-            <a href="{{url('/admin/dashboardPPDB')}}" class="btn btn-info fw-bold text-light">PPDB</a>
+  
+            <a href="{{ url('/admin/dashboardPPDB') }}"><button type="button" class="fw-bold btn btn-info me-5 text-light">PPDB</button></a>
         </div>
     </div>
-</nav>
+  </nav>
+
 {{-- PPDB --}}
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -99,7 +102,7 @@
                 @endforeach
             </tbody>
         </table>
-        <a href="{{ route('export.excel') }}" class="btn btn-success fw-bold">Export Excel</a>
+        {{-- <a href="{{ route('admin.export.excel') }}" class="btn btn-success fw-bold">Export Excel</a> --}}
     </div>
     
     <div class="d-flex justify-content-center mt-3">

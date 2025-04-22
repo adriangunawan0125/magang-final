@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Gambar Carousel</title>
+    <title>Tambah Acara</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -104,7 +104,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Tambah Gambar</h2>
+        <h2>Tambah</h2>
         <form action="{{ route('admin.acara_informasi.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
         

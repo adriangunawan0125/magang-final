@@ -25,7 +25,7 @@
     <!-- AOS CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-    <title>PPDB</title>
+    <title>Dashboard PPDB</title>
   </head>
   <body>
     <!-- Navbar Section -->

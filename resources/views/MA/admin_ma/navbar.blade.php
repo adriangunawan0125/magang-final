@@ -94,7 +94,7 @@
         </div>
 
         <!-- Tombol PPDB -->
-        <a href="{{ route('admin/students')}}" class="btn btn-ppdb d-none d-lg-block">PPDB</a>
+        <a href="{{ url('admin/students')}}" class="btn btn-ppdb d-none d-lg-block">PPDB</a>
     </div>
 </nav>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

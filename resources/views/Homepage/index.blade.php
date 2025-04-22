@@ -156,7 +156,7 @@
 @endphp
 
 <!-- Jadwal -->
-<section data-aos="fade-up" id="jadwal" class="bg-white text-center py-5">
+<section  id="jadwal" class="bg-white text-center py-5">
   <div class="container">
     <h3 class="fw-bold text-success me-2 mb-5">JADWAL PENDAFTARAN</h3>
     <img src="{{ $gambar ? asset('storage/' . $gambar->gambar) : asset('asset/default.png') }}" class="img-fluid">
@@ -165,7 +165,7 @@
 
 
 <!-- MTS dan MA -->
-<section data-aos="fade-up" id="pilihan" class="bg-nav text-white text-center py-5 mt-5 mb-1">
+<section  id="pilihan" class="bg-nav text-white text-center py-5 mt-5 mb-1">
   <div class="container">
     <h2 class="fw-bold mb-5">PROGRAM PILIHAN</h2>
     <div class="row justify-content-center">
@@ -186,7 +186,7 @@
           </div>
         </a>
       </div>
-    </div>
+    </div>  
   </div>
 </section>
 
@@ -224,10 +224,10 @@
           <h5 class="fw-bold mb-3">Navigasi</h5>
           <ul class="list-unstyled">
               <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-              <li><a href="#" class="text-blue-500 underline">Profile</a></li>
+              <li><a href="{{url('/profile')}}" class="text-blue-500 underline">Profile</a></li>
               <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
               </li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
+              <li><a href="{{ url('/informasi') }}" class="text-blue-500 underline">Informasi</a></li>
               <li>
                   <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
               </li>      

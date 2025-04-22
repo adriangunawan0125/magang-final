@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Guru</title>
+    <title>Data kegiatan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -14,8 +14,8 @@
             padding: 20px;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start; /* ubah dari center agar layout fleksibel */
+            min-height: 100vh;
         }
 
         .container {
@@ -76,34 +76,14 @@
             margin: 5px;
         }
 
-        .btn-edit { 
-            background-color: #ffcc00; 
-            color: black; 
-        }
-        .btn-edit:hover { 
-            background-color: #e6b800; 
-        }
-        .btn-delete { 
-            background-color: red; 
-            color: white; 
-        }
-        .btn-delete:hover { 
-            background-color: darkred; 
-        }
-        .btn-add { 
-            background-color: green; 
-            color: white; 
-        }
-        .btn-add:hover { 
-            background-color: darkgreen; 
-        }
-        .btn-back { 
-            background-color: orange; 
-            color: white; 
-        }
-        .btn-back:hover { 
-            background-color: darkorange; 
-        }
+        .btn-edit { background-color: #ffcc00; color: black; }
+        .btn-edit:hover { background-color: #e6b800; }
+        .btn-delete { background-color: red; color: white; }
+        .btn-delete:hover { background-color: darkred; }
+        .btn-add { background-color: green; color: white; }
+        .btn-add:hover { background-color: darkgreen; }
+        .btn-back { background-color: orange; color: white; }
+        .btn-back:hover { background-color: darkorange; }
 
         .action {
             display: flex;
@@ -112,6 +92,7 @@
             flex-wrap: wrap;
             gap: 5px;
         }
+
         .action form {
             display: inline-block;
         }
@@ -128,16 +109,20 @@
                 width: 90%;
                 padding: 15px;
             }
+
             table {
                 font-size: 14px;
             }
+
             th, td {
                 padding: 8px;
             }
+
             .btn {
                 padding: 8px 10px;
                 font-size: 12px;
             }
+
             .btn-edit {
                 padding: 8px 5px;
             }
@@ -148,10 +133,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 100%; 
+                width: 100%;
                 font-size: 12px;
                 padding: 10px;
             }
+
             .action {
                 align-items: center;
             }
@@ -160,12 +146,12 @@
 </head>
 <body>
     <div class="container">
-        <h2>Data Kegiatan</h2>
-    
+        <h2>Data Kegiatan PPDB</h2>
+
         @if(session('success'))
             <p style="color: green;">{{ session('success') }}</p>
         @endif
-    
+
         <div class="table-container">
             <table>
                 <thead>
@@ -207,17 +193,16 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    
+
+        <!-- Tombol di bawah tabel -->
         <div style="margin-top: 20px;" class="action">
             <a href="{{ route('admin.kegiatan_ppdb.create') }}" class="btn btn-add">
                 <i class="fas fa-plus"></i> Tambah Gambar
             </a>
-            <a href="/admin/admin_mts" class="btn btn-back">
+            <a href="{{ url('/admin/dashboardPPDB') }}" class="btn btn-back">
                 <i class="fas fa-arrow-left"></i> Kembali
             </a>
         </div>
     </div>
 </body>
 </html>
-

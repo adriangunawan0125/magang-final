@@ -38,19 +38,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
+              <a class="nav-link" href="{{ url('admin/home') }}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profile.html">PROFILE</a>
+              <a class="nav-link" href="{{ url('admin/admin_profile') }}">PROFILE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">PROGRAM PILIHAN</a>
+              <a class="nav-link" href="{{ url('admin/dashboardPPDB#pilihan') }}">PROGRAM PILIHAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="informasi.html">INFORMASI</a>
+              <a class="nav-link active" href="{{ url('admin/admin_informasi') }}">INFORMASI</a>
             </li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-primary px-4" href="#">PPDB</a>
+              <a class="btn btn-primary px-4" href="{{ url('admin/dashboardPPDB') }}">PPDB</a>
             </li>
          </ul>
       </div>
@@ -218,7 +218,7 @@ button {
 
  <!-- Kegiatan -->
  <section class="kegiatan-section mt-2 mb-2">
-  <h2 class="title">KEGIATAN</h2>
+  <h2 class="title fw-bold">KEGIATAN</h2>
   <div class="kegiatan-container">
       <div class="kegiatan">
           <div class="circle">
@@ -240,9 +240,7 @@ button {
           <div class="circle">
               <i class="fas fa-plus"></i>
           </div>
-          <a href="{{ route('admin.kegiatan_informasi.index') }}">
-              <button class="create-btn">Create</button>
-          </a>
+         
       </div>
   </div>
 </section>
@@ -279,7 +277,7 @@ button {
 
 <!-- Acara Tahunan -->
 <section class="kegiatan-section mt-2 mb-5">
-  <h2 class="title">Acara Tahunan</h2>
+  <h2 class="title fw-bold">ACARA TAHUNAN</h2>
   <div class="kegiatan-container mb-4">
       <div class="acara-card">
           <div class="card-body">
@@ -300,9 +298,7 @@ button {
       <div class="acara-card">
           <div class="card-body">
               <i class="fas fa-plus icon-card"></i> 
-              <a href="{{ route('admin.acara_informasi.index') }}">
-                  <button class="create-btn">Create</button>
-              </a>
+              
           </div>
       </div>
     </div>

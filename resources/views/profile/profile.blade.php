@@ -59,19 +59,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
+              <a class="nav-link" href="{{ url('/') }}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="profile.html">PROFILE</a>
+              <a class="nav-link active" href="{{ url('/profile') }}">PROFILE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">PROGRAM PILIHAN</a>
+              <a class="nav-link" href="{{ url('/Homepage') }}">PROGRAM PILIHAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="informasi.html">INFORMASI</a>
+              <a class="nav-link" href="{{ url('/informasi') }}">INFORMASI</a>
             </li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-primary px-4" href="#">PPDB</a>
+              <a class="btn btn-primary px-4" href="{{ url('/students') }}">PPDB</a>
             </li>
          </ul>
       </div>

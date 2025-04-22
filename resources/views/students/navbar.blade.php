@@ -23,10 +23,10 @@
             <ul class="navbar-nav mx-auto">
               
                 <li class="nav-item">
-                    <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/Homepage#jadwal') }}">FORMULIR PENDAFTARAN</a>
+                    <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/students#form-pendaftaran') }}">FORMULIR PENDAFTARAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/#layanan-online') }}">DATA PENDAFTAR</a>
+                    <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/students#datapendaftar') }}">DATA PENDAFTAR</a>
                 </li>
             </ul>
             <a href="{{ url('/Homepage') }}">

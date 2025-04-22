@@ -22,7 +22,7 @@
 
                 <div class="d-flex justify-content-center gap-3">
                     <button type="submit" class="btn btn-warning fw-bold px-4">Update</button>
-                    <a href="/Homepage" class="btn btn-danger fw-bold px-4">Kembali</a>
+                    <a href="{{ url('/admin/dashboardPPDB') }}" class="btn btn-danger fw-bold px-4">Kembali</a>
                 </div>
             </form>
         </div>

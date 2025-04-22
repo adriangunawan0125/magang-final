@@ -50,7 +50,7 @@ class GuruController extends Controller
         // }
         
         // Redirect ke index dengan pesan sukses
-        return redirect()->route('guru.index')->with('success', 'Data guru berhasil ditambahkan!');
+        return redirect()->route('admin.guru.index')->with('success', 'Data guru berhasil ditambahkan!');
         // return redirect()->route('guru.list')->with('success', 'Data guru berhasil ditambahkan!');
 
     }
@@ -118,7 +118,7 @@ class GuruController extends Controller
         //     return back()->withErrors(['foto' => 'Ukuran gambar tidak boleh lebih dari 2MB.'])->withInput();
         // }
         
-        return redirect()->route('guru.index')->with('success', 'Data guru berhasil diperbarui!');
+        return redirect()->route('admin.guru.index')->with('success', 'Data guru berhasil diperbarui!');
     }
 
     
@@ -137,6 +137,6 @@ class GuruController extends Controller
         // Hapus data guru dari database
         $guru->delete();
 
-        return redirect()->route('guru.index')->with('success', 'Data guru berhasil dihapus!');
+        return redirect()->route('admin.guru.index')->with('success', 'Data guru berhasil dihapus!');
     }
 }

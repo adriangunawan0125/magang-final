@@ -109,7 +109,7 @@
 <body>
     
     <div class="container">
-        <h2>Edit Kegiatan</h2>
+        <h2>Edit</h2>
     
         @if ($errors->any())
             <div style="color: red;">

@@ -267,7 +267,7 @@
                 <li><a href="{{ url('/profile') }}" class="text-blue-500 underline">Profile</a></li>
                 <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
                 </li>
-                <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
+                <li><a href="{{ url('/informasi') }}" class="text-blue-500 underline">Informasi</a></li>
                 <li>
                     <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
                 </li>      

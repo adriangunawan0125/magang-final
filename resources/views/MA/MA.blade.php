@@ -27,10 +27,10 @@
                     <a class="nav-link px-3 active" href="{{ url('/') }}">HOME</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">PROFILE</a>
+                    <a class="nav-link" href="{{ url('/profile') }}">PROFILE</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">INFORMASI</a>
+                    <a class="nav-link" href="{{ url('/informasi') }}">INFORMASI</a>
                 </li>
                 <li>
                 <li class="nav-item px-3">

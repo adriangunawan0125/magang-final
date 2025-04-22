@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Guru</title>
+    <title>Informasi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -156,23 +156,24 @@
                 align-items: center;
             }
         }
+
+        .text-danger {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Data Carousel</h2>
-
-        @if(session('success'))
-            <p style="color: green;">{{ session('success') }}</p>
-        @endif
 
         
 <div class="container">
     <h2>Data Gambar Informasi</h2>
+    
 
     @if(session('success'))
         <p style="color: green;">{{ session('success') }}</p>
     @endif
+<h4 class="text-danger">* Disarankan Gambar Depan Berukuran Landscape <br> * Gambar yang akan dipakai sebagai Gambar Latar hanya gambar No 1 </h4>
 
     <div class="table-container">
         <table>
@@ -226,7 +227,7 @@
         <a href="{{ route('admin.informasi.create') }}" class="btn btn-add">
             <i class="fas fa-plus"></i> Tambah Gambar
         </a>
-        <a href="/admin/admin_mts" class="btn btn-back">
+        <a href="{{ url('admin/admin_informasi') }}" class="btn btn-back">
             <i class="fas fa-arrow-left"></i> Kembali
         </a>
     </div>

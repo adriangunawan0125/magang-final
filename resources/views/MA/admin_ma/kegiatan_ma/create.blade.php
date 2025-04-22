@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Kegiatan</title>
+    <title>Tambah Kegiatan MA</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -89,7 +89,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Tambah Kegiatan</h2>
+        <h2>Tambah</h2>
         <form action="{{ route('admin.kegiatan_ma.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label for="foto">Masukkan Gambar</label>

@@ -69,26 +69,6 @@
 }
 
 
-/* .circle { */
-      /* width: 350px; 
-      /* height: 350px;
-      border-radius: 30px 70px 30px 70px;
-      overflow: hidden;
-      margin: auto;
-    }
-
-.circle img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-
-.row > .col-md-4 {
-      padding-top: 10px;
-      padding-bottom: 10px;
-    } */
-
 </style>
 
 <!-- Navbar -->
@@ -111,6 +91,9 @@
       </button>
       <div class="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
           <ul class="navbar-nav mx-auto">
+              <li class="nav-item text-light">
+                  <a class="nav-link active ms-5 text-light" style="font-weight: 750 !important" aria-current="page" href="{{url('/admin/home')}}">Beranda</a>
+              </li>
               <li class="nav-item text-light">
                   <a class="nav-link active ms-5 text-light" style="font-weight: 750 !important" aria-current="page" href="{{url('/admin/dashboardPPDB#jadwal')}}">Jadwal</a>
               </li>
@@ -261,9 +244,7 @@
           <div class="circle">
               <i class="fas fa-plus"></i>
           </div>
-          <a href="{{ route('admin.kegiatan_ppdb.index') }}">
-              <button class="create-btn">Create</button>
-          </a>
+         =
       </div>
   </div>
 </section>

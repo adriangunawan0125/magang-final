@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Guru</title>
+    <title>Data Kegiatan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -76,34 +76,14 @@
             margin: 5px;
         }
 
-        .btn-edit { 
-            background-color: #ffcc00; 
-            color: black; 
-        }
-        .btn-edit:hover { 
-            background-color: #e6b800; 
-        }
-        .btn-delete { 
-            background-color: red; 
-            color: white; 
-        }
-        .btn-delete:hover { 
-            background-color: darkred; 
-        }
-        .btn-add { 
-            background-color: green; 
-            color: white; 
-        }
-        .btn-add:hover { 
-            background-color: darkgreen; 
-        }
-        .btn-back { 
-            background-color: orange; 
-            color: white; 
-        }
-        .btn-back:hover { 
-            background-color: darkorange; 
-        }
+        .btn-edit { background-color: #ffcc00; color: black; }
+        .btn-edit:hover { background-color: #e6b800; }
+        .btn-delete { background-color: red; color: white; }
+        .btn-delete:hover { background-color: darkred; }
+        .btn-add { background-color: green; color: white; }
+        .btn-add:hover { background-color: darkgreen; }
+        .btn-back { background-color: orange; color: white; }
+        .btn-back:hover { background-color: darkorange; }
 
         .action {
             display: flex;
@@ -112,6 +92,7 @@
             flex-wrap: wrap;
             gap: 5px;
         }
+
         .action form {
             display: inline-block;
         }
@@ -148,7 +129,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                width: 100%; 
+                width: 100%;
                 font-size: 12px;
                 padding: 10px;
             }
@@ -156,12 +137,17 @@
                 align-items: center;
             }
         }
+
+        .text-danger {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Data Kegiatan</h2>
-
+        
         @if(session('success'))
             <p style="color: green;">{{ session('success') }}</p>
         @endif
@@ -205,18 +191,15 @@
                 </tbody>
             </table>
         </div>
-        
-        </div>
 
         <div style="margin-top: 20px;" class="action">
             <a href="{{ route('admin.kegiatan_informasi.create') }}" class="btn btn-add">
                 <i class="fas fa-plus"></i> Tambah Gambar
             </a>
-            <a href="/admin/admin_mts" class="btn btn-back">
+            <a href="{{ url('admin/admin_informasi') }}" class="btn btn-back">
                 <i class="fas fa-arrow-left"></i> Kembali
             </a>
         </div>
     </div>
 </body>
 </html>
-

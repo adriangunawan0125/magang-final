@@ -59,19 +59,19 @@
       <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">HOME</a>
+              <a class="nav-link" href="{{ url('admin/home') }}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="profile.html">PROFILE</a>
+              <a class="nav-link active" href="{{ url('admin/admin_profile') }}">PROFILE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">PROGRAM PILIHAN</a>
+              <a class="nav-link" href="{{ url('admin/dashboardPPDB#pilihan') }}">PROGRAM PILIHAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="informasi.html">INFORMASI</a>
+              <a class="nav-link" href="{{ url('admin/admin_informasi') }}">INFORMASI</a>
             </li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-primary px-4" href="#">PPDB</a>
+              <a class="btn btn-primary px-4" href="{{ url('admin/dashboardPPDB') }}">PPDB</a>
             </li>
          </ul>
       </div>
@@ -205,7 +205,7 @@
               <li><a href="#" class="text-blue-500 underline">Profile</a></li>
               <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
               </li>
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Informasi</a></li>
+              <li><a href="{{ url('admin/admin_informasi') }}" class="text-blue-500 underline">Informasi</a></li>
               <li>
                   <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
               </li>      

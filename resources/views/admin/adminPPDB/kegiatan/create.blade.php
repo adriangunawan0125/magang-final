@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Gambar Carousel</title>
+    <title>Tambah Gambar kegiatan </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -104,7 +104,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Tambah Kegiatan</h2>
+        <h2>Tambah</h2>
     
         @if ($errors->any())
             <div style="color: red;">
@@ -126,7 +126,7 @@
             <input type="file" id="foto" name="foto" class="form-control" required>
     
             <p class="error-message" id="errorMessage" style="color: red;"></p>
-    
+            
             <button type="submit" class="btn-submit" id="submitBtn">Selesai</button>
         </form>
     </div>

@@ -38,16 +38,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto me-5">
                 <li class="nav-item">
-                    <a class="nav-link px-3 active" href="#">HOME</a>
+                    <a class="nav-link px-3 active" href="{{url('/admin/home')}}">HOME</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">PROFILE</a>
+                    <a class="nav-link" href="{{url('/admin/admin_profile')}}">PROFILE</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">PROGRAM PILIHAN</a>
+                    <a class="nav-link" href="{{url('/admin/dashboardPPDB#pilihan')}}">PROGRAM PILIHAN</a>
                 </li>
                 <li class="nav-item px-3">
-                    <a class="nav-link" href="#">INFORMASI</a>
+                    <a class="nav-link" href="{{url('/admin/admin_informasi')}}">INFORMASI</a>
                 </li>
             </ul>
         </div>

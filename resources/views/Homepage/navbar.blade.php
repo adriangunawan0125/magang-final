@@ -33,7 +33,7 @@
                     <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/Homepage#jadwal') }}">PENGUMUMAN</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/#layanan-online') }}">LAYANAN ONLINE</a>
+                    <a class="nav-link active ms-5 fw-bold" style="font-weight: 750 !important" href="{{ url('/students#datapendaftar') }}">DATA PPDB</a>
                 </li>
             </ul>
             <a href="{{ url('/students') }}">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Sambutan Kepala Sekolah</title>
+    <title>Edit Sambutan Kepala sekolah MTS</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -126,7 +126,7 @@
 </head>
 <body>
     <div class="edit-sambutan-container">
-        <h2 class="title">Edit Sambutan</h2>
+        <h2 class="title">Edit Sambutan MTS</h2>
 
         <form action="{{ route('admin.sambutan_mts.update') }}" method="POST" enctype="multipart/form-data" class="edit-sambutan">
             @csrf

@@ -46,7 +46,7 @@ class GuruMTSController extends Controller
         ]);
         
         // Redirect ke index dengan pesan sukses
-        return redirect()->route('guru_mts.index')->with('success', 'Data guru berhasil ditambahkan!');
+        return redirect()->route('admin.guru_mts.index')->with('success', 'Data guru berhasil ditambahkan!');
 
     }
 
@@ -109,7 +109,7 @@ class GuruMTSController extends Controller
             'foto' => $guru->foto
         ]);
         
-        return redirect()->route('guru_mts.index')->with('success', 'Data guru berhasil diperbarui!');
+        return redirect()->route('admin.guru_mts.index')->with('success', 'Data guru berhasil diperbarui!');
     }
 
     
@@ -128,6 +128,6 @@ class GuruMTSController extends Controller
         // Hapus data guru dari database
         $guru->delete();
 
-        return redirect()->route('guru_mts.index')->with('success', 'Data guru berhasil dihapus!');
+        return redirect()->route('admin.guru_mts.index')->with('success', 'Data guru berhasil dihapus!');
     }
 }
