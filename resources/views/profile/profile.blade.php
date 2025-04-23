@@ -49,10 +49,9 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #00583A;">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="{{asset('/img/logo.png')}}" alt="Logo Nurul Firdaus" height="40" class="me-2">
-        
-      </a>
+      <a class="navbar-brand me-4" href="{{ url('/') }}">
+        <img src="{{ asset('asset/logo_nufi.png') }}" alt="Nurul Firdaus" width="62">
+    </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -149,29 +148,50 @@ style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat
 </section>
 
 
-  <!-- Sejarah Section -->
-  <section id="sejarah" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center fade-in fw-bold text-dark">SEJARAH</h2>
-      <div class="row align-items-center">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <div class="fade-in">
-            <p class="fw-bold text-dark">
-              Yayasan Nurul Firdaus berdiri sebagai wujud tekad dan visi seorang pemuda bernama M. Noorsyambudi dari Desa Manggarmas. Pada tahun 1980, ia memulai perjalanan ke Pondok Pesantren Gontor untuk memperdalam ilmu agama dan pendidikan. Sekembalinya dari Gontor, K.H. M. Noorsyambudi bercita-cita memajukan pendidikan di desanya, yang saat itu sebagian besar masyarakatnya hanya mengenyam pendidikan dasar. Dengan dorongan keluarga, ia mendirikan Pondok Pesantren Modern Nurul Firdaus pada 17 Sya'ban 1405 H (8 Mei 1985). Awalnya, pondok ini berdiri di atas lahan seluas 750 m² dengan bangunan sederhana berupa rumah dan mushola. Santri pertama berjumlah 53 orang, terdiri dari 11 santri mukim putra, 15 santri mukim putri, dan 27 santri kalong.
-            </p>
-            <p class="fw-bold text-dark">
-              Seiring berjalannya waktu, Yayasan Nurul Firdaus terus berkembang baik dari segi fasilitas maupun jumlah santri. Pada tahun 1989, yayasan ini membuka jenjang pendidikan formal, yaitu Madrasah Tsanawiyah (MTs) dan Madrasah Aliyah (MA), guna memberi kesempatan santri melanjutkan pendidikan ke tingkat yang lebih tinggi. Sejak itu, lembaga ini menjadi lembaga pendidikan yang tidak hanya menekankan nilai-nilai keislaman, tetapi juga memadukan kurikulum modern untuk membentuk generasi yang berakhlak Qur'ani, mandiri, dan inspiratif.
-            </p>
-          </div>
+<section id="sejarah" class="py-5 mb-5" style="background-color: #DCFDF1;">
+  <div class="container px-4">
+    <h2 class="mb-5 text-center fade-in fw-bold text-dark">SEJARAH</h2>
+
+    <!-- Bagian pertama -->
+    <div class="row align-items-center mb-5">
+      <div class="col-md-4">
+        <div class="fade-in">
+          <img src="{{ asset('/img/sejarah-1.jpg') }}" alt="Pondok Pesantren Nurul Firdaus" class="img-fluid rounded shadow w-100 md-4" style="margin-right: 20px;">
         </div>
-        <div class="col-md-6">
-          <div class="fade-in">
-            <img src="{{asset('/img/sejarah-1.jpg')}}" alt="Sejarah Pondok Pesantren" class="img-fluid rounded shadow">
-          </div>
+      </div>
+      <div class="col-md-8">
+        <div class="fade-in">
+          <p class="fw-bold text-dark" style="text-align: justify; margin-left: 20px;">
+            Yayasan Nurul Firdaus berdiri sebagai wujud dari tekad dan visi seorang pemuda bernama M. Noorsyambudi dari Desa Manggarmas. Pada tahun 1980, ia memulai perjalanannya ke Pondok Pesantren Gontor untuk memperdalam ilmu agama dan pendidikan. Sekembalinya dari Gontor, K.H. M. Noorsyambudi memiliki cita-cita untuk memajukan pendidikan di desanya, yang saat itu sebagian besar masyarakatnya hanya menempuh pendidikan dasar.
+         
+            Dengan dorongan dan dukungan dari keluarga, beliau mendirikan Pondok Pesantren Modern Nurul Firdaus pada tanggal 17 Sya’ban 1405 H (8 Mei 1985). Awalnya, pondok ini berdiri di atas lahan seluas 750 m² dengan bangunan sederhana berupa rumah dan mushola. Santri pertama berjumlah 53 orang, yang terdiri dari 11 santri mukim putra, 15 santri mukim putri, dan 27 santri kalong.
+          </p>
         </div>
       </div>
     </div>
-  </section>
+
+    <!-- Bagian kedua -->
+    <div class="row mt-4 align-items-center">
+      <div class="col-md-8">
+        <div class="fade-in">
+          <p class="fw-bold text-dark" style="text-align: justify; margin-right: 20px;">
+            Seiring berjalannya waktu, Yayasan Nurul Firdaus terus berkembang, baik dari segi fasilitas maupun jumlah santri. Pada tahun 1989, yayasan ini mulai membuka jenjang pendidikan formal, yaitu Madrasah Tsanawiyah (MTs) dan Madrasah Aliyah (MA), guna memberikan kesempatan kepada santri untuk melanjutkan pendidikan ke tingkat yang lebih tinggi.
+          
+            Sejak saat itu, lembaga ini menjadi institusi pendidikan yang tidak hanya menekankan nilai-nilai keislaman, tetapi juga mengintegrasikan kurikulum modern untuk membentuk generasi yang berakhlak Qur'ani, mandiri, dan inspiratif.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fade-in">
+          <img src="{{ asset('/img/sejarah.png') }}" alt="Pondok Pesantren Nurul Firdaus" class="img-fluid rounded shadow w-100" style="margin-left: 20px;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
  <!-- Stats Section -->
 <section class="py-5 bg-success">

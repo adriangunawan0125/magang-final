@@ -15,8 +15,8 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="{{ asset('img\MA-Logo.png') }}" alt="Logo MA">
+        <a class="navbar-brand me-4" href="{{ url('/') }}">
+            <img src="{{ asset('asset/logo_nufi.png') }}" alt="Nurul Firdaus" width="62">
         </a>
         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
