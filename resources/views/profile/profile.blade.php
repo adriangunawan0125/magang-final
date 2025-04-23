@@ -73,7 +73,7 @@
             
             </li>
          </ul>
-         <a class="btn btn-primary px-4" href="{{ url('/students') }}">PPDB</a>
+         <a class="btn btn-primary px-4" href="{{ url('/Homepage') }}">PPDB</a>
       </div>
     </div>
   </nav>

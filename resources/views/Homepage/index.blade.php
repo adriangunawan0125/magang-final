@@ -132,18 +132,22 @@
             <a href="{{ url('/students') }}" 
                class="btn fw-bold text-dark py-2 d-flex align-items-center justify-content-center"
                style="background-color: #FFD700; border-radius: 10px; gap: 8px;">
-              <span style="font-size: 2rem;">📋</span> Form Pendaftaran
+              <img src="{{ asset('img\Vector0.png') }}" alt="Form Pendaftaran" style="width: 2rem; height: auto;">
+              Form Pendaftaran
             </a>
           </div>
           <div class="col-10 col-md-3">
             <a href="{{ url('/students#datapendaftar') }}" 
                class="btn fw-bold text-white py-2 d-flex align-items-center justify-content-center"
                style="background-color: #3B82F6; border-radius: 10px; gap: 8px;">
-              <span style="font-size: 2rem;">👤</span> Data Pendaftar
+              <img src="{{ asset('img\Vectorbroh.png') }}" alt="Data Pendaftar" style="width: 1.7rem; height: auto;">
+              Data Pendaftar
             </a>
           </div>
         </div>
       </div>
+</section>
+
       
 
   </div>
