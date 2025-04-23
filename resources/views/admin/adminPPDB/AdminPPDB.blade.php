@@ -168,58 +168,6 @@
   </div>
 </section>
 
-<!-- Kegiatan -->
-{{-- <section data-aos="fade-up" id="kegiatan" class="py-5 bg-light mt-2 mb-3">
-  <div class="container text-center">
-      <h2 class="mb-5 fw-bold text-success">KEGIATAN</h2>
-      <a href="{{ route('admin.gambarKegiatan.create') }}" class="btn btn-primary mb-3">Tambah Gambar</a>
-      <div class="row">
-          @foreach($gambarKegiatan as $gk)
-              <div class="col-md-4">
-                  <div class="circle">
-                      <img src="{{ asset('storage/' . $gk->gambar) }}" alt="Kegiatan">
-                  </div>
-                  <a href="{{ route('admin.gambarKegiatan.edit', $gk->id) }}" class="btn btn-warning mt-2">Edit</a>
-                  <form action="{{ route('admin.gambarKegiatan.destroy', $gk->id) }}" method="POST" class="d-inline">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit" class="btn btn-danger mt-2">Hapus</button>
-                  </form>
-              </div>
-          @endforeach
-      </div>
-  </div>
-</section> --}}
-
-{{-- <section class="kegiatan-section mt-2 mb-2">
-  <h2 class="title">KEGIATAN</h2>
-  <div class="kegiatan-container">
-      <div class="kegiatan">
-          <div class="circle">
-              <i class="fas fa-trash-alt"></i> 
-          </div>
-          <a href="{{ route('admin.kegiatan_ma.index') }}">
-              <button class="edit-btn">Edit</button>
-          </a>
-      </div>
-      <div class="kegiatan">
-          <div class="circle">
-              <i class="fas fa-plus"></i> 
-          </div>
-          <a href="{{ route('admin.gambarKegiatan.create') }}">
-              <button class="create-btn">Create</button>
-              </a>
-      </div>
-      <div class="kegiatan">
-          <div class="circle">
-              <i class="fas fa-plus"></i>
-          </div>
-          <a href="{{ route('admin.kegiatan_ma.create') }}">
-              <button class="create-btn">Create</button>
-          </a>
-      </div>
-  </div>
-</section> --}}
 
  <!-- Kegiatan -->
  <section class="kegiatan-section mt-2 mb-2">

@@ -1,11 +1,11 @@
 
 <style>
-    /* Paksa semua nav-link di navbar jadi putih */
+   
     nav.navbar .nav-link {
         color: white !important;
     }
 
-    /* Hover tetap hijau */
+   
     nav.navbar .nav-link:hover {
         color: rgb(219, 177, 13)!important;
     }

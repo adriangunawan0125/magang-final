@@ -158,7 +158,7 @@
 
                 {{-- filtwer --}}
                 <form id="filter-form" method="GET" action="{{ route('students.index') }}" class="mb-3">
-                    <div class="row g-2"> <!-- Gunakan grid Bootstrap -->
+                    <div class="row g-2"> 
                         <div class="col-md-3 col-12">
                             <input type="text" name="search" class="form-control w-100" placeholder="Cari Nama..."
                                 value="{{ request('search') }}">
@@ -208,19 +208,19 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function(){
-    // Event saat user mengubah filter
+   
     $('#filter-form').on('submit', function(e){
-        e.preventDefault(); // Hindari refresh halaman
+        e.preventDefault(); 
 
         $.ajax({
             url: "{{ route('students.index') }}",
             type: "GET",
-            data: $(this).serialize(), // Kirim data form
+            data: $(this).serialize(), 
             beforeSend: function(){
-                $('#students-table').html('<p class="text-center">Loading...</p>'); // Loading message
+                $('#students-table').html('<p class="text-center">Loading...</p>'); 
             },
             success: function(response){
-                $('#students-table').html(response.students); // Update tabel dengan data baru
+                $('#students-table').html(response.students); 
             },
             error: function(){
                 alert('Terjadi kesalahan, coba lagi.');
@@ -235,15 +235,15 @@ document.getElementById("resetButton").addEventListener("click", function() {
                             element.value = "";
                         });
                 
-                        // Kirim permintaan AJAX untuk reset filter
+                        
                         $.ajax({
                             url: "{{ route('students.index') }}",
                             type: "GET",
                             beforeSend: function(){
-                                $('#students-table').html('<p class="text-center">Loading...</p>'); // Tampilan loading
+                                $('#students-table').html('<p class="text-center">Loading...</p>'); 
                             },
                             success: function(response){
-                                $('#students-table').html(response.students); // Update tabel dengan data asli
+                                $('#students-table').html(response.students); 
                             },
                             error: function(){
                                 alert('Terjadi kesalahan, coba lagi.');

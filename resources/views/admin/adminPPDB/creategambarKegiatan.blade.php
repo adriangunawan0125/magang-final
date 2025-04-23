@@ -31,7 +31,7 @@
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="col-md-6">
-        <h2 class="text-center text-dark fw-bold mb-4">Ubah Gambar</h2>
+        <h2 class="text-center text-dark fw-bold mb-4">TAMBAH GAMBAR</h2>
 
         @if(session('success'))
             <div class="alert alert-success">{{ session('success') }}</div>

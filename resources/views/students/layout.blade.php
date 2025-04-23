@@ -40,9 +40,9 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         AOS.init({
-          duration: 1000, // Adjust animation duration
-          once: true, // Ensures animation happens only once when scrolling
-          offset: 100, // Offset before triggering animations
+          duration: 1000, 
+          once: true, 
+          offset: 100, 
         });
       });
     </script>

@@ -147,12 +147,12 @@ style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat
   </div>
 </section>
 
-
+{{-- sejarah --}}
 <section id="sejarah" class="py-5 mb-5" style="background-color: #DCFDF1;">
   <div class="container px-4">
     <h2 class="mb-5 text-center fade-in fw-bold text-dark">SEJARAH</h2>
 
-    <!-- Bagian pertama -->
+  
     <div class="row align-items-center mb-5">
       <div class="col-md-4">
         <div class="fade-in">
@@ -170,7 +170,6 @@ style="background: url('{{ asset('/img/hero-bg.jpg') }}') center/cover no-repeat
       </div>
     </div>
 
-    <!-- Bagian kedua -->
     <div class="row mt-4 align-items-center">
       <div class="col-md-8">
         <div class="fade-in">

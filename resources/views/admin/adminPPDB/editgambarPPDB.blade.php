@@ -4,7 +4,7 @@
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
     <div class="col-md-6">
-        <h2 class="text-center fw-bold mb-4 text-dark">Update Gambar Kegiatan</h2>
+        <h2 class="text-center fw-bold mb-4 text-dark"> Gambar Kegiatan</h2>
 
         @if(session('success'))
             <div class="alert alert-success text-center">{{ session('success') }}</div>
