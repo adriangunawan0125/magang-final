@@ -108,7 +108,7 @@
 </head>
 <body>
     
-    <div class="container">
+    {{-- <div class="container">
         <h2>Edit</h2>
         <form action="{{ route('admin.kegiatan_mts.update',1, $kegiatan_mts->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -125,6 +125,27 @@
             <div class="button-container">
                 <button type="submit" class="btn btn-save">Simpan</button>
                 <a href="/admin/admin_mts" class="btn btn-back">Kembali</a>
+            </div>
+        </form>
+    </div> --}}
+
+    <div class="container">
+        <h2>Edit</h2>
+        <form action="{{ route('admin.kegiatan_mts.update', $kegiatan_mts->id) }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+            <label for="nama">Nama Kegiatan</label>
+            <input type="text" name="nama" value="{{ $kegiatan_mts->nama }}" required placeholder="Masukkan Nama">
+            <label for="foto">Masukkan Foto Baru</label>
+            <input type="file" name="foto" accept="image/*">
+            <small class="text-danger d-block ">*Maksimal ukuran foto: 2 MB</small>
+            @if($kegiatan_mts->foto)
+                <p>Gambar Saat Ini:</p>
+                <img src="{{ asset('storage/' . $kegiatan_mts->foto) }}">
+            @endif
+            <div class="button-container">
+                <button type="submit" class="btn btn-save">Simpan</button>
+                <a href="/admin/admin_ma" class="btn btn-back">Kembali</a>
             </div>
         </form>
     </div>

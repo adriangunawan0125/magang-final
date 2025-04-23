@@ -28,6 +28,7 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
 
 
+        
         $carousels = Carousel::latest()->get();
         $sambutan = Sambutan::first();
         $strukturalImage = Struktural::first();

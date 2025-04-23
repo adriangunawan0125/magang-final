@@ -42,29 +42,29 @@
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="{{asset('/img/logo.png')}}" alt="Logo Nurul Firdaus" height="40" class="me-2">
-        <span>Nurul Firdaus</span>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-         <ul class="navbar-nav ms-auto">
+         <ul class="navbar-nav mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/') }}">HOME</a>
+              <a class="nav-link" style="font-weight: 500 !important;" href="{{ url('/') }}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/profile') }}">PROFILE</a>
+              <a class="nav-link" style="font-weight: 500 !important;" href="{{ url('/profile') }}">PROFILE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/Homepage#pilihan') }}">PROGRAM PILIHAN</a>
+              <a class="nav-link" style="font-weight: 500 !important;" href="{{ url('/Homepage#pilihan') }}">PROGRAM PILIHAN</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="{{ url('/informasi') }}">INFORMASI</a>
+              <a class="nav-link active" style="font-weight: 500 !important;" href="{{ url('/informasi') }}">INFORMASI</a>
             </li>
             <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
-              <a class="btn btn-primary px-4" href="{{ url('/Homepage') }}">PPDB</a>
+             
             </li>
          </ul>
+         <a class="btn btn-info px-4" style="font-weight: 500 !important;" href="{{ url('/Homepage') }}">PPDB</a>
       </div>
     </div>
   </nav>

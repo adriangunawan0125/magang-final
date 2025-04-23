@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Kegiatan_mts;
+use App\Models\KegiatanMts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -10,7 +10,7 @@ class KegiatanMTSController extends Controller
 {
     public function index()
     {
-        $kegiatans = Kegiatan_mts::paginate(5);
+        $kegiatans = KegiatanMts::paginate(5);
         return view('MTs.admin_mts.kegiatan_mts.index', compact('kegiatans'));
     }
     
@@ -31,7 +31,7 @@ class KegiatanMTSController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName(); 
             $fotoPath = $file->storeAs('uploads/kegiatan_ma', $fileName, 'public'); 
         }
-        Kegiatan_mts::create([
+        KegiatanMts::create([
             'nama' => $request->nama,
             'foto' => $fotoPath,
         ]);
@@ -40,19 +40,19 @@ class KegiatanMTSController extends Controller
     }
 
  
-    public function show(Kegiatan_mts $kegiatan_mts)
+    public function show(KegiatanMts $kegiatan_mts)
     {
         //
     }
 
  
-    public function edit(Kegiatan_mts $kegiatan_mts)
+    public function edit(KegiatanMts $kegiatan_mts)
     {
         return view('MTs.admin_mts.kegiatan_mts.edit', compact('kegiatan_mts'));
     }
 
 
-    public function update(Request $request, Kegiatan_mts $kegiatan_mts)
+    public function update(Request $request, KegiatanMts $kegiatan_mts)
     {
         $request->validate([
             'nama' => 'required',
@@ -77,7 +77,7 @@ class KegiatanMTSController extends Controller
     }
 
    
-    public function destroy(Kegiatan_mts $kegiatan_mts)
+    public function destroy(KegiatanMts $kegiatan_mts)
     {
         if ($kegiatan_mts->foto) {
             Storage::disk('public')->delete($kegiatan_mts->foto);
@@ -86,4 +86,5 @@ class KegiatanMTSController extends Controller
 
         return redirect()->route('admin.kegiatan_mts.index')->with('success', 'Kegiatan berhasil dihapus.');
     }
+    
 }

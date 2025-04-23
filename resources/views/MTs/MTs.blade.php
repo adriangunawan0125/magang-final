@@ -163,7 +163,7 @@
             @foreach ( $kegiatans as $k)
             <div class="kegiatan">
                 <img src="{{ asset('storage/'. $k->foto) }}" alt="{{$k->nama}}" alt="Upacara 17 Agustus">
-                <p>Upacara 17 Agustus</p>
+                <p>{{$k->nama}}</p>
             </div>
             @endforeach
         </div>

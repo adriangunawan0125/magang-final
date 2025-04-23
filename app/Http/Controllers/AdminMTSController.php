@@ -7,7 +7,8 @@ use App\Models\Guru_mts;
 use App\Models\Sosmed_mts;
 use App\Models\Kegiatan_mts;
 use App\Models\Carousel_mts;
-use App\Models\sambutan_mts; // Memastikan ada model sambutan_mts
+use App\Models\KegiatanMts;
+use App\Models\sambutan_mts; 
 
 class AdminMTSController extends Controller
 {
@@ -15,7 +16,7 @@ class AdminMTSController extends Controller
     {
         $guru = Guru_mts::all();
         $sosmed = Sosmed_mts::all();
-        $kegiatans = Kegiatan_mts::all();
+        $kegiatans = KegiatanMts::all();
         $carousels_mts = Carousel_mts::all();
         $sambutan = sambutan_mts::first();
 

@@ -147,7 +147,9 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     Route::get('/guru-mts', [GuruMTSController::class, 'showGuruInMA'])->name('guru_mts');
 
     // Kegiatan
-    Route::resource('kegiatan_mts', KegiatanMTSController::class);
+    Route::resource('kegiatan_mts', KegiatanMTSController::class)->parameters([
+        'kegiatan_mts' => 'kegiatan_mts'
+    ]);
 
     // Sosmed
     Route::get('/sosmed_mts/edit', [SosmedMTSController::class, 'edit'])->name('sosmed_mts.edit');
