@@ -185,7 +185,9 @@ Route::middleware(['auth:admin'])->prefix('admin')->name('admin.')->group(functi
     // GLOBAL ADMIN ROUTES
     // ---------------------------
     // CRUD Berita
-    Route::resource('berita', BeritaController::class);
+    Route::resource('berita', BeritaController::class)->parameters([
+        'berita' => 'berita'
+    ]);
     Route::get('/admin/home', [BeritaController::class, 'beritaAdmin'])->name('admin.home');
 
     // CRUD Struktural

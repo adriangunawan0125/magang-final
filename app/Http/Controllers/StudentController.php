@@ -39,7 +39,7 @@ class StudentController extends Controller
             $query->whereYear('created_at', $request->year);
         }
 
-        $students = $query->paginate(10)->appends($request->query()); // Untuk menjaga filter saat pindah halaman
+        $students = $query->paginate(5)->appends($request->query()); // Untuk menjaga filter saat pindah halaman
 
         // Jika request berasal dari AJAX, kirim data sebagai JSON
         if ($request->ajax()) {
