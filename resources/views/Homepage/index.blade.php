@@ -114,6 +114,54 @@
     right: 10px;
 }
 
+/* Footer Section */
+footer {
+    background-color: var(--primary-color);
+}
+  
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+  
+footer a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+  
+footer .logo img {
+    height: 60px;
+}
+  
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+  
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+  
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+    
+}
+  
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
 </style>
 
 
@@ -207,64 +255,59 @@
   </div>
 </section>
 
-<!-- Footer Section -->
-<footer class="container-fluid py-3 px-4 px-md-5" style="background-color: #dcfdf1">
-  <div class="row justify-content-center text-center text-md-start align-items-start h-100 mt-4 pt-3 gap-3">
-
-      <div class="col-md-3 d-flex flex-column h-100 text-center mx-auto">
-          <img src="images/logo-fix.png" alt="Logo Sekolah" width="120" class="mt-2 mx-auto">
-          <p class="mt-2"><i class="bi bi-envelope me-2"></i> YayasanNufi@gmail.com</p>
-          <p><i class="bi bi-telephone me-2"></i> +62 856-4035-2942</p>
-
-          <div class="mt-3">
-              <a href="#" class="me-2"><i class="bi bi-facebook fs-4"></i></a>
-              <a href="#" class="me-2"><i class="bi bi-instagram fs-4"></i></a>
-              <a href="#" class="me-2"><i class="bi bi-tiktok fs-4"></i></a>
-              <a href="#" class="me-2"><i class="bi bi-linkedin fs-4"></i></a>
+<!-- Footer -->
+<footer class="py-5 text-white" style="background-color: #0a6e31;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <div class="logo">
+            <img src="images/logo-main.png" alt="Logo Nurul Firdaus">
+            <h5 class="mt-3">Yayasan Pon Pes<br>Modern Nurul Firdaus</h5>
           </div>
-      </div>
-
-      <div class="col-md-2 d-flex flex-column h-100">
-          <h5 class="fw-bold mb-3">Navigasi</h5>
+          <p class="mt-3">Mencetak generasi berakhlak Mulia, mandiri, dan berprestasi.</p>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5>Navigasi</h5>
           <ul class="list-unstyled">
-              <li><a href="{{ route('dashboard.beranda') }}" class="text-blue-500 underline">Home</a></li>
-              <li><a href="{{url('/profile')}}" class="text-blue-500 underline">Profile</a></li>
-              <li><a href="{{ url('/Homepage#pilihan') }}" class="text-blue-500 underline">Program Pilihan</a>
-              </li>
-              <li><a href="{{ url('/informasi') }}" class="text-blue-500 underline">Informasi</a></li>
-              <li>
-                  <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
-              </li>      
+            <li><a href="{{ route('dashboard.beranda') }}">Home</a></li>
+            <li><a href="{{ url('/profile') }}">Profile</a></li>
+            <li><a href="{{ url('/Homepage#pilihan') }}">Program Pilihan</a></li>
+            <li><a href="{{ url('/informasi') }}">Informasi</a></li>
+            <li><a href="{{ url('/Homepage') }}">PPDB</a></li>
           </ul>
-      </div>
-
-      <div class="col-md-2 d-flex flex-column h-100">
-          <h5 class="fw-bold mb-3">Website Terkait</h5>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5>Website terkait</h5>
           <ul class="list-unstyled">
-              <li><a href="{{ url('/ma') }}" class="text-blue-500 underline">MA</a></li>
-              <li><a href="{{ url('/mts') }}" class="text-blue-500 underline">MTS</a></li>
+            <li><a href="{{ url('/ma') }}">MA</a></li>
+            <li><a href="{{ url('/mts') }}">MTs</a></li>
           </ul>
-      </div>
-
-      <div class="col-md-2 d-flex flex-column h-100">
-          <h5 class="fw-bold mb-3">Layanan</h5>
-          <ul class="list-unstyled">
-              <li><a href="https://wa.me/6285640352942" class="text-decoration text-blue">WhatsApp</a></li>
-              <li><a href="mailto:YayasanNufi@gmail.com" class="text-decoration text-blue">Email</a></li>
-              <li>
-                  <a href="{{ url('/Homepage') }}" class="text-primary text-decoration-underline">PPDB</a>
-              </li>      
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5>Layanan</h5>
+          <ul class="list-unstyled mb-3">
+            <li><i class="fas fa-envelope me-2"></i> <a href="mailto:yayasannurul@gmail.com">yayasannurul@gmail.com</a></li>
+            <li><i class="fas fa-phone me-2"></i> <a href="tel:+6282120112425">+62 821 2011 2425</a></li>
           </ul>
+          <h5>Media Sosial</h5>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.linkedin.com/company/nurulfirdaus/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
       </div>
-  </div>
-
-  <hr class="mt-0" style="border-top: 2px solid #000;">
-
-  <div class="text-center py-1">
-      <p class="mb-0 text-muted">Copyright © 2025 | Yayasan Nurul Firdaus</p>
-      <p class="mb-0 text-muted">Designed by Magang TISI USM</p>
-  </div>
-</footer>
+      
+      <div class="text-center copyright">
+        <p>&copy; 2025 Yayasan Nurul Firdaus. All rights reserved.<br>
+        <small>Designed by Tim Magang FTIK USM</small></p>
+      </div>
+    </div>
+  </footer>
 
 
 <!-- jQuery -->

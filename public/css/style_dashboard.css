@@ -244,6 +244,53 @@ iframe {
     display: block;
 }
 
+/* Footer Section */
+footer {
+    background-color: var(--primary-color);
+}
+  
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+  
+footer a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+  
+footer .logo img {
+    height: 60px;
+}
+  
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+  
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
+}
+  
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-dark);
+}
+  
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
     h2 {
         font-size: 1.5rem;
