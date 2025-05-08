@@ -115,13 +115,14 @@
             SELAMAT DATANG DI WEBSITE YAYASAN NURUL FIRDAUS
         </marquee></h2>
     </div>
-
-  <!-- Container Utama -->
+      
+<!-- Container Utama -->
   <div class="content-container">
     <div class="left-container">
       @include('dashboard/adminsambutan')
       @include('dashboard/tentang-kami')
     </div>
+  </div>
 
     <div class="right-container">
       <iframe class="iframe berita-terkini" src="{{ url('dashboard/berita-terkini') }}"></iframe>
