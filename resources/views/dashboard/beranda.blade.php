@@ -123,17 +123,13 @@
         </marquee></h2>
     </div>
 
-    <!-- Container Utama -->
-    <div class="content-container">
-        <div class="left-container">
-            @include('dashboard.sambutan')
-            @include('dashboard.tentang-kami')
-        </div>
-
-        <div class="right-container">
-            <iframe class="iframe berita-terkini" src="{{ url('dashboard/berita-terkini') }}"></iframe>
-        </div>
+   <!-- Container Utama -->
+<div class="content-container">
+    <div class="left-container">
+        @include('dashboard.sambutan')
+        @include('dashboard.tentang-kami')
     </div>
+</div>
 
     @php
         $struktur = \App\Models\Struktural::latest()->first();
