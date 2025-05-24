@@ -206,27 +206,61 @@
     </div>
 </div>
 
-    <!-- SOSIAL MEDIA -->
-    <div class="sosmed-container">
-        <h2 class="title text-center py-2">SOSIAL MEDIA</h2>
-        <div class="social-media">
-            @foreach($sosmed as $s)
-                <a href="{{ $s->url }}">
-                    <img src="{{ asset('img/' . $s->name) }}" alt="{{ $s->name }}">
-                </a>
-            @endforeach
+
+<!-- Footer -->
+  <footer class="py-5 text-white" style="background-color: #0a6e31;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <div class="logo">
+            <img src="images/logo.png" alt="Logo Nurul Firdaus">
+            <h5 class="mt-3">Yayasan Pon Pes<br>Modern Nurul Firdaus</h5>
+          </div>
+          <p class="mt-3">Mencetak generasi berakhlak Qur'ani, mandiri, dan berprestasi.</p>
         </div>
-        <a href="{{ route('admin.sosmed_mts.edit') }}" class="link-admin-sosmed">
-            <h3 class="text-center py-2">MA NURUL FIRDAUS MANGGARMAS</h3>
-        </a>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5>Navigasi</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#">Program Pilihan</a></li>
+            <li><a href="informasi.html">Informasi</a></li>
+            <li><a href="#">PPDB</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5>Website terkait</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">MA</a></li>
+            <li><a href="#">MTs</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5>Layanan</h5>
+          <ul class="list-unstyled mb-3">
+            <li><i class="fas fa-envelope me-2"></i> <a href="mailto:yayasannurulf@gmail.com">yayasannurulf@gmail.com</a></li>
+            <li><i class="fas fa-phone me-2"></i> <a href="tel:+6282120112425">+62 821 2011 2425</a></li>
+          </ul>
+          <h5>Media Sosial</h5>
+          <div class="social-icons">
+            <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.linkedin.com/company/nurulfirdaus/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center copyright">
+        <p>&copy; 2025 Yayasan Nurul Firdaus. All rights reserved.<br>
+        <small>Designed by Tim Magang FTIK USM</small></p>
+      </div>
     </div>
+  </footer>
 
-
-
-     <!-- FOOTER -->
-     <div class="footer">
-        <p class="text-center mt-3">Copyright © 2025 | YAYASAN NURUL FIRDAUS <br> Design by TIM MAGANG TIKSI USM</p>
-    </div>
 
 
     <script src="{{ asset('js/ma.js') }}"></script>
